@@ -12,19 +12,22 @@ class ViewController: UIViewController {
     
 
     var dex_value_cal = 0, str_value_cal = 0, int_value_cal = 0 //bunun degerini daha sonra hesaplamak icin kullanilacak.
-    var dex_max_cal = 0, str_max_cal = 0, int_max_cal = 0 //
-    let absoluteTotalPoints = 5.0  // total stat pool
+    var dex_max_cal = 0, str_max_cal = 0, int_max_cal = 0
+    
+    
+    let absoluteTotalPoints = 9.0  // total stat pool
     
     var str_current_value : Double = 0.0
     var dex_current_value : Double = 0.0
-    
+    var int_current_value : Double = 0.0
     
     var str_maximum_value : Double = 0.0
-    
-    
+    var dex_maximum_value : Double = 0.0
+    var int_maximum_value : Double = 0.0
 
-    @IBOutlet weak var STR_UILabel: UILabel!
     
+    
+    @IBOutlet weak var STR_UILabel: UILabel!
     @IBOutlet weak var dex_value: UILabel!
     @IBOutlet weak var int_value: UILabel!
     
@@ -41,68 +44,61 @@ class ViewController: UIViewController {
         }
     
     }
-
-    //initial maximum allowed points.
-    
-    //str_value_changer.sender.maximumValue
     
     
-    @IBAction func str_value_changer(_ sender: UIStepper) { //comment here
-        
-        
+    @IBAction func str_value_changer(_ sender: UIStepper) {
         logstuff()
-        
         str_current_value = sender.value //client 's input is stored in str_current_value
         STR_UILabel.text = String(sender.value) //current value of  the label
         str_maximum_value = sender.maximumValue //label's maximum value could be this
-        
-        
-        
         var isAllowed = totalPool() //toplam havuz daha fazla puan atamama izin vericek mi??
-        
         print (isAllowed)
         
         if isAllowed == true {
-            
             sender.maximumValue = sender.maximumValue + 1
-            
         }
-        
         else {
             //sender.isHidden = true
             sender.maximumValue = sender.value
             print ("Maximum Points Allocated.",sender.value)
-            
         }
-        
-  //sender.maximumValue = calculation >= max ? str_value_cal : max
-        //dex_max_cal = calculation >= max ? dex_value_cal : max
-       
-        
     }
 
   @IBAction func dex_value_changer(_ sender: UIStepper) {
-        /*  logstuff()
-        dex_value.text = String(sender.value)
-        dex_value_cal = Int(sender.value)
-        dex_max_cal = Int(sender.maximumValue)
-        sender.maximumValue = Double(calculation >= max ? dex_value_cal: max)
-        str_max_cal = calculation >= max ? str_value_cal : max
-    */
+        logstuff()
+        dex_current_value = sender.value //client 's input is stored in str_current_value
+        DEX_UILabel.text = String(sender.value) //current value of  the label
+        dex_maximum_value = sender.maximumValue //label's maximum value could be this
+        var isAllowed = totalPool() //toplam havuz daha fazla puan atamama izin vericek mi??
+        print (isAllowed)
+        
+        if isAllowed == true {
+            sender.maximumValue = sender.maximumValue + 1
+        }
+        else {
+            //sender.isHidden = true
+            sender.maximumValue = sender.value
+            print ("Maximum Points Allocated.",sender.value)
+        }
     }
  
     
     @IBAction func int_value_changer(_ sender: UIStepper) {
-        
         logstuff()
-        int_value.text = String(sender.value)
+        int_current_value = sender.value //client 's input is stored in str_current_value
+        INT_UILabel.text = String(sender.value) //current value of  the label
+        int_maximum_value = sender.maximumValue //label's maximum value could be this
+        var isAllowed = totalPool() //toplam havuz daha fazla puan atamama izin vericek mi??
+        print (isAllowed)
         
-        
-        
-        
-        
-        print("int_value_cal: ", dex_value_cal)
-        
+        if isAllowed == true {
+            sender.maximumValue = sender.maximumValue + 1
+        }
+        else {
+            //sender.isHidden = true
+            sender.maximumValue = sender.value
+            print ("Maximum Points Allocated.",sender.value)
+        }
     }
     
     func logstuff (   ) {
