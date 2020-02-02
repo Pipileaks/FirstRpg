@@ -10,15 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+
+  
+    
+   /*
     var str_value_cal : Int = 0
     var dex_value_cal : Int = 0
+    
+
     var str_max_cal : Int = 0
     var dex_max_cal : Int = 0
+    */
+    
+    var dex_value_cal = 0, str_value_cal = 0, int_value_cal = 0
+    var dex_max_cal = 0, str_max_cal = 0, int_max_cal = 0
     var maks = 6
     
     
     @IBOutlet weak var str_value: UILabel!
     @IBOutlet weak var dex_value: UILabel!
+    @IBOutlet weak var int_value: UILabel!
+    
+    
+    @IBAction func int_value_changer(_ sender: UIStepper) {
+        int_value.text = String(sender.value)
+        
+    }
     
     @IBAction func str_value_changer(_ sender: UIStepper) { //comment here
         str_value.text = String(sender.value)
