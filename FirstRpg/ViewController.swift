@@ -52,18 +52,21 @@ class ViewController: UIViewController {
     func refreshMax() {
         
         
+        if totalPool() == true {
+                   for sender in self.valueChangers{
+                    
+                    
+                       sender.maximumValue = sender.maximumValue + 1
+                       print (sender.maximumValue)
+                    
+                    
+                   }
+               }
+               else {
+                print("nop")
+               }
         
         
-        for sender in self.valueChangers{
-            
-            
-            
-            sender.maximumValue = sender.maximumValue + 1
-            print (sender.maximumValue)
-            
-            
-            
-        }
         
 
         
@@ -78,39 +81,19 @@ class ViewController: UIViewController {
         
         
     }
-    
-    //@IBOutlet var value_changers: [UIButton]!
 
-    
-        
-
-        
-        
-    
-    
-    
+  
     @IBAction func str_value_changer(_ sender: UIStepper) {
-        
-
-        
+            
         str_current_value = sender.value //client 's input is stored in str_current_value
         STR_UILabel.text = String(sender.value) //current value of  the label
         str_maximum_value = sender.maximumValue //label's maximum value could be this
         var isAllowed = totalPool() //toplam havuz daha fazla puan atamama izin vericek mi??
         print (isAllowed)
         
-        if isAllowed == true {
-            sender.maximumValue = sender.maximumValue + 1
-        }
-        else {
- 
-            sender.maximumValue = sender.value
-            print ("Maximum Points Allocated.",sender.value)
-        }
-        
+
         logstuff()
         refreshMax()
-        
     }
 
   @IBAction func dex_value_changer(_ sender: UIStepper) {
@@ -122,15 +105,8 @@ class ViewController: UIViewController {
         var isAllowed = totalPool() //toplam havuz daha fazla puan atamama izin vericek mi??
         print (isAllowed)
         
-        if isAllowed == true {
-            sender.maximumValue = sender.maximumValue + 1
-        }
-        else {
-            //sender.isHidden = true
-            sender.maximumValue = sender.value
-            print ("Maximum Points Allocated.",sender.value)
-        }
-    
+
+        refreshMax()
         logstuff()
     }
  
@@ -144,15 +120,7 @@ class ViewController: UIViewController {
         var isAllowed = totalPool() //toplam havuz daha fazla puan atamama izin vericek mi??
         print (isAllowed)
         
-        if isAllowed == true {
-            sender.maximumValue = sender.maximumValue + 1
-        }
-        else {
-            //sender.isHidden = true
-            sender.maximumValue = sender.value
-            print ("Maximum Points Allocated.",sender.value)
-        }
-        
+        refreshMax()
         logstuff()
     }
     
