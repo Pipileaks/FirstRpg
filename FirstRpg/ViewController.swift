@@ -28,13 +28,15 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var STR_UILabel: UILabel!
-    @IBOutlet weak var dex_value: UILabel!
-    @IBOutlet weak var int_value: UILabel!
+    @IBOutlet weak var DEX_UILabel: UILabel!
+    @IBOutlet weak var INT_UILabel: UILabel!
     
-    //let calculation = str_value_cal + dex_value_cal
+    
+    
+
     func totalPool() -> Bool {
 
-        var currentTotalPoints = str_current_value + dex_current_value
+        var currentTotalPoints = str_current_value + dex_current_value + int_current_value
         
         if currentTotalPoints <= absoluteTotalPoints {
             return true
@@ -48,6 +50,10 @@ class ViewController: UIViewController {
     
     @IBAction func str_value_changer(_ sender: UIStepper) {
         logstuff()
+        
+        sender.canPerformAction(<#T##action: Selector##Selector#>, withSender: <#T##Any?#>)
+        
+        
         str_current_value = sender.value //client 's input is stored in str_current_value
         STR_UILabel.text = String(sender.value) //current value of  the label
         str_maximum_value = sender.maximumValue //label's maximum value could be this
