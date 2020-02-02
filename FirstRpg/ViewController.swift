@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
         sender.maximumValue = Double(calculation >= maks ? str_value_cal: maks)
         dex_max_cal = calculation >= maks ? dex_value_cal : maks
-    
+       
         
     }
 
