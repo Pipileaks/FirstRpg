@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var str_value: UILabel!
     @IBOutlet weak var dex_value: UILabel!
     
-    @IBAction func str_value_changer(_ sender: UIStepper) {
+    @IBAction func str_value_changer(_ sender: UIStepper) { //comment here
         str_value.text = String(sender.value)
         str_value_cal = Int(sender.value)
         print(str_value_cal)
