@@ -15,7 +15,9 @@ class ViewController: UIViewController {
     var dex_max_cal = 0, str_max_cal = 0, int_max_cal = 0
     
     
-    let absoluteTotalPoints = 9.0  // total stat pool
+    let absoluteTotalPoints = 10.0  // total stat pool
+    lazy var currentPoints = absoluteTotalPoints
+    
     
     var str_current_value : Double = 0.0
     var dex_current_value : Double = 0.0
@@ -30,7 +32,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var STR_UILabel: UILabel!
     @IBOutlet weak var DEX_UILabel: UILabel!
     @IBOutlet weak var INT_UILabel: UILabel!
-    
+    @IBOutlet var valueChangers: [UIStepper]!
     
     
 
@@ -38,7 +40,7 @@ class ViewController: UIViewController {
 
         var currentTotalPoints = str_current_value + dex_current_value + int_current_value
         
-        if currentTotalPoints <= absoluteTotalPoints {
+        if currentTotalPoints < absoluteTotalPoints {
             return true
         }
         else {
@@ -47,12 +49,49 @@ class ViewController: UIViewController {
     
     }
     
+    func refreshMax() {
+        
+        
+        
+        
+        for sender in self.valueChangers{
+            
+            
+            
+            sender.maximumValue = sender.maximumValue + 1
+            print (sender.maximumValue)
+            
+            
+            
+        }
+        
+
+        
+    }
+    
+    func logstuff () {
+        
+        print ("Current Points are: ",currentPoints)
+        print("str_current_value: ", str_current_value)
+        print("dex_current_value: ", dex_current_value)
+        print("int_current_value: ", int_current_value)
+        
+        
+    }
+    
+    //@IBOutlet var value_changers: [UIButton]!
+
+    
+        
+
+        
+        
+    
+    
     
     @IBAction func str_value_changer(_ sender: UIStepper) {
-        logstuff()
         
-        sender.canPerformAction(<#T##action: Selector##Selector#>, withSender: <#T##Any?#>)
-        
+
         
         str_current_value = sender.value //client 's input is stored in str_current_value
         STR_UILabel.text = String(sender.value) //current value of  the label
@@ -64,14 +103,19 @@ class ViewController: UIViewController {
             sender.maximumValue = sender.maximumValue + 1
         }
         else {
-            //sender.isHidden = true
+ 
             sender.maximumValue = sender.value
             print ("Maximum Points Allocated.",sender.value)
         }
+        
+        logstuff()
+        refreshMax()
+        
     }
 
   @IBAction func dex_value_changer(_ sender: UIStepper) {
-        logstuff()
+        
+    
         dex_current_value = sender.value //client 's input is stored in str_current_value
         DEX_UILabel.text = String(sender.value) //current value of  the label
         dex_maximum_value = sender.maximumValue //label's maximum value could be this
@@ -86,11 +130,14 @@ class ViewController: UIViewController {
             sender.maximumValue = sender.value
             print ("Maximum Points Allocated.",sender.value)
         }
+    
+        logstuff()
     }
  
     
     @IBAction func int_value_changer(_ sender: UIStepper) {
-        logstuff()
+        
+        
         int_current_value = sender.value //client 's input is stored in str_current_value
         INT_UILabel.text = String(sender.value) //current value of  the label
         int_maximum_value = sender.maximumValue //label's maximum value could be this
@@ -105,16 +152,11 @@ class ViewController: UIViewController {
             sender.maximumValue = sender.value
             print ("Maximum Points Allocated.",sender.value)
         }
+        
+        logstuff()
     }
     
-    func logstuff (   ) {
-        
-        print("ALPALPALP")
-        print("dex_value_cal: ", dex_value_cal)
-        print("dex_value_cal: ", dex_value_cal)
-        //print("sender.maximumValue: ", sender.maximumValue)
-        print("str_value_cal: ", str_value_cal)
-    }
+
     
 
     
@@ -125,7 +167,8 @@ class ViewController: UIViewController {
         
         
         
-
+        
+        
         // Do any additional setup after loading the view.
     }
    
