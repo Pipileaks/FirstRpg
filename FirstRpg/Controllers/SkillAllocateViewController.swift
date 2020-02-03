@@ -18,7 +18,7 @@ class SkillAllocateViewController: UIViewController {
     let absoluteTotalPoints = 20  // total stat pool
     
     
-   
+
     
     var str_current_value = 0
     var dex_current_value = 0
@@ -26,6 +26,7 @@ class SkillAllocateViewController: UIViewController {
     var cha_current_value = 0
     var wis_current_value = 0
     var lck_current_value = 0
+    
     
     var total_current = 0
     
@@ -52,10 +53,14 @@ class SkillAllocateViewController: UIViewController {
         if segue.identifier == "goToMain" {
             let destinationVC = segue.destination as! MainViewController
             
+            
             destinationVC.characterAllocatedSkills = str_current_value
+            
+            
+            
         }
     }
-    //Continue Button Here
+  
     
     
     @IBOutlet weak var PointLeft_UILabel: UILabel!
@@ -98,17 +103,14 @@ class SkillAllocateViewController: UIViewController {
         
         let currentTotalPoints = str_current_value + dex_current_value + int_current_value + cha_current_value + wis_current_value + lck_current_value
         
-       
+         
         
         
-        //Start Of Calculation of Current Total Points Left
+        //Start Of Calculation of Current Total Points Left and Start Of Continue Button
         let currentLeftPoints = absoluteTotalPoints - currentTotalPoints
         
         PointLeft_UILabel.text = String(currentLeftPoints)
-        //End Of Calculation of Current Total Points Left
         
-        
-        //Start Of Continue Button
         if currentLeftPoints == 0 {
             continueButtonOutlet.isHidden = false
         } else {
@@ -146,7 +148,8 @@ class SkillAllocateViewController: UIViewController {
         
     }
     
-    
+ 
+
     
     @IBAction func str_value_changer(_ sender: UIStepper) {
         
@@ -248,8 +251,7 @@ class SkillAllocateViewController: UIViewController {
         super.viewDidLoad()
         
         continueButtonOutlet.isHidden = true
-        
-        
+       
     }
     
     

@@ -11,7 +11,12 @@ import UIKit
 class MainViewController: UIViewController {
     
     var characterAllocatedSkills: Int?
+  
+    
+    
 
+
+    
     @IBOutlet weak var strLabel: UILabel!
     
 
@@ -19,6 +24,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       
+        
+        
         strLabel.text = String(characterAllocatedSkills!)
     }
     
@@ -26,5 +34,7 @@ class MainViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
     
 }
