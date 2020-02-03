@@ -10,13 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-
+    
     var dex_value_cal = 0, str_value_cal = 0, int_value_cal = 0, cha_value_cal = 0, wis_value_cal = 0, lck_value_cal = 0  //bunun degerini daha sonra hesaplamak icin kullanilacak.
     var dex_max_cal = 0, str_max_cal = 0, int_max_cal = 0, wis_max_cal = 0, cha_max_cal = 0, lck_max_cal = 0
     
     
     let absoluteTotalPoints = 20  // total stat pool
-  
+    
     
     
     var str_current_value = 0
@@ -44,17 +44,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var INT_UILabel: UILabel!
     @IBOutlet weak var CHA_UILabel: UILabel!
     @IBOutlet weak var WIS_UILabel: UILabel!
-    @IBOutlet weak var LCK__UILabel: UILabel!
-    
-    
-    
-    @IBOutlet var valueChangers: [UIStepper]!
+    @IBOutlet weak var LCK_UILabel: UILabel!
     
     
 
+    @IBOutlet var valueChangers: [UIStepper]!
+    
+    
+    
+   
+    
+    
+    
     func totalPool() -> Bool {
         
-        let currentTotalPoints = str_current_value + dex_current_value + int_current_value
+        let currentTotalPoints = str_current_value + dex_current_value + int_current_value + cha_current_value + wis_current_value + lck_current_value
         total_current = currentTotalPoints
         
         if currentTotalPoints < Int(absoluteTotalPoints) {
@@ -63,17 +67,16 @@ class ViewController: UIViewController {
         else {
             return false
         }
-    
+        
     }
     
-   
+    
     
     func refreshMax() {
         
         
-       
         
-        let currentTotalPoints = str_current_value + dex_current_value + int_current_value
+        let currentTotalPoints = str_current_value + dex_current_value + int_current_value + cha_current_value + wis_current_value + lck_current_value
         
         //Start Of Calculation of Current Total Points Left
         let currentLeftPoints = absoluteTotalPoints - currentTotalPoints
@@ -84,13 +87,13 @@ class ViewController: UIViewController {
         if currentTotalPoints <= Int(absoluteTotalPoints - 1) {
             for sender in self.valueChangers{
                 sender.isEnabled = true
-            
+                
             } } else {
-                for sender in self.valueChangers {
-                    sender.isEnabled = false
-                }
+            for sender in self.valueChangers {
+                sender.isEnabled = false
             }
-            
+        }
+        
         if  totalPool() == true {
             for sender in self.valueChangers{
                 
@@ -108,49 +111,36 @@ class ViewController: UIViewController {
             }
         }
         
-        
-        
-
-        
     }
     
-    func logstuff () {
-        
-        print ("Current Points are: ",total_current)
-        print("str_current_value: ", str_current_value)
-        print("dex_current_value: ", dex_current_value)
-        print("int_current_value: ", int_current_value)
-        
-        
-    }
-
-  
+    
+    
     @IBAction func str_value_changer(_ sender: UIStepper) {
         
         str_current_value = Int(sender.value) //client 's input is stored in str_current_value
         STR_UILabel.text = String(str_current_value) //current value of  the label
         str_maximum_value = sender.maximumValue //label's maximum value could be this
-         //toplam havuz daha fazla puan atamama izin vericek mi??
+        //toplam havuz daha fazla puan atamama izin vericek mi??
         
-
+        
         logstuff()
         refreshMax()
     }
-
-  @IBAction func dex_value_changer(_ sender: UIStepper) {
-        
     
-    dex_current_value = Int(sender.value) //client 's input is stored in str_current_value
+    @IBAction func dex_value_changer(_ sender: UIStepper) {
+        
+        
+        dex_current_value = Int(sender.value) //client 's input is stored in str_current_value
         DEX_UILabel.text = String(dex_current_value) //current value of  the label
         dex_maximum_value = sender.maximumValue //label's maximum value could be this
-         //toplam havuz daha fazla puan atamama izin vericek mi??
-    
+        //toplam havuz daha fazla puan atamama izin vericek mi??
         
-
+        
+        
         refreshMax()
         logstuff()
     }
- 
+    
     
     @IBAction func int_value_changer(_ sender: UIStepper) {
         
@@ -158,31 +148,80 @@ class ViewController: UIViewController {
         int_current_value = Int(sender.value) //client 's input is stored in str_current_value
         INT_UILabel.text = String(int_current_value) //current value of  the label
         int_maximum_value = sender.maximumValue //label's maximum value could be this
-         //toplam havuz daha fazla puan atamama izin vericek mi??
+        //toplam havuz daha fazla puan atamama izin vericek mi??
         
         
         refreshMax()
         logstuff()
     }
     
-
+    @IBAction func cha_value_changer(_ sender: UIStepper) {
+        cha_current_value = Int(sender.value) //client 's input is stored in str_current_value
+        CHA_UILabel.text = String(cha_current_value) //current value of  the label
+        cha_maximum_value = sender.maximumValue //label's maximum value could be this
+        //toplam havuz daha fazla puan atamama izin vericek mi??
+        
+        
+        refreshMax()
+        logstuff()
+        
+    }
     
-
-
+    @IBAction func wis_value_changer(_ sender: UIStepper) {
+        wis_current_value = Int(sender.value) //client 's input is stored in str_current_value
+        WIS_UILabel.text = String(wis_current_value) //current value of  the label
+        wis_maximum_value = sender.maximumValue //label's maximum value could be this
+        //toplam havuz daha fazla puan atamama izin vericek mi??
+        
+        
+        refreshMax()
+        logstuff()
+        
+    }
+    
+    @IBAction func lck_value_changer(_ sender: UIStepper) {
+        
+        lck_current_value = Int(sender.value) //client 's input is stored in str_current_value
+        LCK_UILabel.text = String(lck_current_value) //current value of  the label
+        lck_maximum_value = sender.maximumValue //label's maximum value could be this
+        //toplam havuz daha fazla puan atamama izin vericek mi??
+        
+        
+        refreshMax()
+        logstuff()
+    }
     
     
-
+    
+    
+    
+    
+    
+    
+    func logstuff () {
+        
+        print ("Current Points are: ",total_current)
+        print("str_current_value: ", str_current_value)
+        print("dex_current_value: ", dex_current_value)
+        print("int_current_value: ", int_current_value)
+        print("int_current_value: ", cha_current_value)
+        print("int_current_value: ", wis_current_value)
+        print("int_current_value: ", lck_current_value)
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         
-
+        
     }
-   
- 
     
-
+    
+    
+    
     
 }
 

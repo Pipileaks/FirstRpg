@@ -101,27 +101,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="b0E-hG-0tx" userLabel="Stepper_dex">
-                                <rect key="frame" x="219" y="476" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="dex_value_changer:" destination="BYZ-38-t0r" eventType="valueChanged" id="THV-1c-gd4"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Y2K-KJ-BN2" userLabel="Stepper_int">
-                                <rect key="frame" x="218" y="546" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="int_value_changer:" destination="BYZ-38-t0r" eventType="valueChanged" id="tTE-rp-Rai"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eSk-WG-7HX" userLabel="Stepper_str">
-                                <rect key="frame" x="219" y="403" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="str_value_changer:" destination="BYZ-38-t0r" eventType="valueChanged" id="bfZ-aH-EKZ"/>
-                                </connections>
-                            </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgW-Mc-U2w">
                                 <rect key="frame" x="169" y="407" width="33" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -150,6 +129,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="fhF-1o-Lsb" userLabel="Stepper_cha">
+                                <rect key="frame" x="219" y="401" width="94" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="cha_value_changer:" destination="BYZ-38-t0r" eventType="valueChanged" id="fVc-oI-ULQ"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="iXN-xT-fsg" userLabel="Stepper_wis">
+                                <rect key="frame" x="219" y="477" width="94" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="wis_value_changer:" destination="BYZ-38-t0r" eventType="valueChanged" id="QCw-Cs-W54"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ciJ-bD-ycO" userLabel="Stepper_lck">
+                                <rect key="frame" x="219" y="550" width="94" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="lck_value_changer:" destination="BYZ-38-t0r" eventType="valueChanged" id="Koa-yW-8tY"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -158,13 +158,16 @@
                         <outlet property="CHA_UILabel" destination="vgW-Mc-U2w" id="Lu9-nj-SYL"/>
                         <outlet property="DEX_UILabel" destination="e1i-XQ-jNv" id="Ykp-T7-sey"/>
                         <outlet property="INT_UILabel" destination="UMx-DA-yqA" id="SKl-ZS-rVG"/>
-                        <outlet property="LCK__UILabel" destination="rfd-BU-RfJ" id="tT2-zs-8gA"/>
+                        <outlet property="LCK_UILabel" destination="rfd-BU-RfJ" id="4xx-WF-B8D"/>
                         <outlet property="PointLeft_UILabel" destination="MDh-a3-VOv" id="Wzn-uv-Ffw"/>
                         <outlet property="STR_UILabel" destination="Tqk-O8-30z" id="9UA-KK-fqX"/>
                         <outlet property="WIS_UILabel" destination="zaF-ok-tRs" id="T8w-KQ-6rB"/>
-                        <outletCollection property="valueChangers" destination="5fa-ZM-b7b" collectionClass="NSMutableArray" id="wNV-w8-dAP"/>
-                        <outletCollection property="valueChangers" destination="O2N-ti-JkI" collectionClass="NSMutableArray" id="tV1-ZH-FSY"/>
-                        <outletCollection property="valueChangers" destination="20x-uH-a9P" collectionClass="NSMutableArray" id="i78-yu-fT7"/>
+                        <outletCollection property="valueChangers" destination="5fa-ZM-b7b" collectionClass="NSMutableArray" id="xWX-b6-rZG"/>
+                        <outletCollection property="valueChangers" destination="O2N-ti-JkI" collectionClass="NSMutableArray" id="YT1-2X-Fbc"/>
+                        <outletCollection property="valueChangers" destination="20x-uH-a9P" collectionClass="NSMutableArray" id="3f6-gp-YUx"/>
+                        <outletCollection property="valueChangers" destination="fhF-1o-Lsb" collectionClass="NSMutableArray" id="bLw-7w-nfW"/>
+                        <outletCollection property="valueChangers" destination="iXN-xT-fsg" collectionClass="NSMutableArray" id="bWo-Se-FLM"/>
+                        <outletCollection property="valueChangers" destination="ciJ-bD-ycO" collectionClass="NSMutableArray" id="e77-IN-4qc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
