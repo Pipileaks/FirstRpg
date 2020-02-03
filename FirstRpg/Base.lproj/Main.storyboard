@@ -150,6 +150,15 @@
                                     <action selector="lck_value_changer:" destination="BYZ-38-t0r" eventType="valueChanged" id="Koa-yW-8tY"/>
                                 </connections>
                             </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nv-yl-6ar">
+                                <rect key="frame" x="153" y="603" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <action selector="continueButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wkb-AZ-4g4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -162,6 +171,7 @@
                         <outlet property="PointLeft_UILabel" destination="MDh-a3-VOv" id="Wzn-uv-Ffw"/>
                         <outlet property="STR_UILabel" destination="Tqk-O8-30z" id="9UA-KK-fqX"/>
                         <outlet property="WIS_UILabel" destination="zaF-ok-tRs" id="T8w-KQ-6rB"/>
+                        <outlet property="continueButtonOutlet" destination="7nv-yl-6ar" id="xTO-xM-9JV"/>
                         <outletCollection property="valueChangers" destination="5fa-ZM-b7b" collectionClass="NSMutableArray" id="xWX-b6-rZG"/>
                         <outletCollection property="valueChangers" destination="O2N-ti-JkI" collectionClass="NSMutableArray" id="YT1-2X-Fbc"/>
                         <outletCollection property="valueChangers" destination="20x-uH-a9P" collectionClass="NSMutableArray" id="3f6-gp-YUx"/>

@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     let absoluteTotalPoints = 20  // total stat pool
     
     
+   
     
     var str_current_value = 0
     var dex_current_value = 0
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
     
     var total_current = 0
     
+    
     var str_maximum_value : Double = 0.0
     var dex_maximum_value : Double = 0.0
     var int_maximum_value : Double = 0.0
@@ -36,6 +38,16 @@ class ViewController: UIViewController {
     var lck_maximum_value : Double = 0.0
     
     
+    //Continue Button Here
+    @IBOutlet weak var continueButtonOutlet: UIButton!
+    
+    @IBAction func continueButtonPressed(_ sender: UIButton) {
+        
+        
+        
+    }
+    
+
     
     
     @IBOutlet weak var PointLeft_UILabel: UILabel!
@@ -78,11 +90,24 @@ class ViewController: UIViewController {
         
         let currentTotalPoints = str_current_value + dex_current_value + int_current_value + cha_current_value + wis_current_value + lck_current_value
         
+       
+        
+        
         //Start Of Calculation of Current Total Points Left
         let currentLeftPoints = absoluteTotalPoints - currentTotalPoints
         
         PointLeft_UILabel.text = String(currentLeftPoints)
         //End Of Calculation of Current Total Points Left
+        
+        
+        //Start Of Continue Button
+        if currentLeftPoints == 0 {
+            continueButtonOutlet.isHidden = false
+        } else {
+            continueButtonOutlet.isHidden = true
+        }
+        
+         //End Of Continue Button
         
         if currentTotalPoints <= Int(absoluteTotalPoints - 1) {
             for sender in self.valueChangers{
@@ -214,7 +239,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        continueButtonOutlet.isHidden = true
         
         
     }
