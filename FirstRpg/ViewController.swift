@@ -22,11 +22,14 @@ class ViewController: UIViewController {
     var str_current_value : Double = 0.0
     var dex_current_value : Double = 0.0
     var int_current_value : Double = 0.0
+    var total_current : Double = 0.0
     
     var str_maximum_value : Double = 0.0
     var dex_maximum_value : Double = 0.0
     var int_maximum_value : Double = 0.0
 
+    
+    var counterTotal = 0
     
     
     @IBOutlet weak var STR_UILabel: UILabel!
@@ -38,7 +41,8 @@ class ViewController: UIViewController {
 
     func totalPool() -> Bool {
 
-        var currentTotalPoints = str_current_value + dex_current_value + int_current_value
+        let currentTotalPoints = str_current_value + dex_current_value + int_current_value
+        total_current = currentTotalPoints
         
         if currentTotalPoints < absoluteTotalPoints {
             return true
@@ -49,22 +53,45 @@ class ViewController: UIViewController {
     
     }
     
+    func updateNotify() {
+        
+        counterTotal = counterTotal + Int(str_current_value + dex_current_value + int_current_value)
+        
+    }
+    
     func refreshMax() {
         
         
-        if totalPool() == true {
-                   for sender in self.valueChangers{
-                    
-                    
-                       sender.maximumValue = sender.maximumValue + 1
-                       print (sender.maximumValue)
-                    
-                    
-                   }
-               }
-               else {
-                print("nop")
-               }
+       
+        
+        let currentTotalPoints = str_current_value + dex_current_value + int_current_value
+        
+        if currentTotalPoints <= 9 {
+            for sender in self.valueChangers{
+                sender.isEnabled = true
+            
+            } } else {
+                for sender in self.valueChangers {
+                    sender.isEnabled = false
+                }
+            }
+            
+        if  totalPool() == true {
+            for sender in self.valueChangers{
+                
+                
+                sender.maximumValue = sender.maximumValue + 1
+                print (sender.maximumValue)
+                
+                
+            }
+        }
+        else {
+            for sender in self.valueChangers {
+                sender.isEnabled = true
+                sender.maximumValue = sender.value
+            }
+        }
         
         
         
@@ -74,7 +101,7 @@ class ViewController: UIViewController {
     
     func logstuff () {
         
-        print ("Current Points are: ",currentPoints)
+        print ("Current Points are: ",total_current)
         print("str_current_value: ", str_current_value)
         print("dex_current_value: ", dex_current_value)
         print("int_current_value: ", int_current_value)
@@ -84,12 +111,11 @@ class ViewController: UIViewController {
 
   
     @IBAction func str_value_changer(_ sender: UIStepper) {
-            
+        
         str_current_value = sender.value //client 's input is stored in str_current_value
         STR_UILabel.text = String(sender.value) //current value of  the label
         str_maximum_value = sender.maximumValue //label's maximum value could be this
-        var isAllowed = totalPool() //toplam havuz daha fazla puan atamama izin vericek mi??
-        print (isAllowed)
+         //toplam havuz daha fazla puan atamama izin vericek mi??
         
 
         logstuff()
@@ -102,8 +128,8 @@ class ViewController: UIViewController {
         dex_current_value = sender.value //client 's input is stored in str_current_value
         DEX_UILabel.text = String(sender.value) //current value of  the label
         dex_maximum_value = sender.maximumValue //label's maximum value could be this
-        var isAllowed = totalPool() //toplam havuz daha fazla puan atamama izin vericek mi??
-        print (isAllowed)
+         //toplam havuz daha fazla puan atamama izin vericek mi??
+    
         
 
         refreshMax()
@@ -117,8 +143,8 @@ class ViewController: UIViewController {
         int_current_value = sender.value //client 's input is stored in str_current_value
         INT_UILabel.text = String(sender.value) //current value of  the label
         int_maximum_value = sender.maximumValue //label's maximum value could be this
-        var isAllowed = totalPool() //toplam havuz daha fazla puan atamama izin vericek mi??
-        print (isAllowed)
+         //toplam havuz daha fazla puan atamama izin vericek mi??
+        
         
         refreshMax()
         logstuff()
@@ -126,6 +152,7 @@ class ViewController: UIViewController {
     
 
     
+
 
     
     
@@ -135,9 +162,7 @@ class ViewController: UIViewController {
         
         
         
-        
-        
-        // Do any additional setup after loading the view.
+
     }
    
  
