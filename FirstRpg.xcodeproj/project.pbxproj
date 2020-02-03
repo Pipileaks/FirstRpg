@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1116B5A523E87B8E00E0244D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116B5A423E87B8E00E0244D /* MainViewController.swift */; };
 		115D8E3F23E37E080099D0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E3E23E37E080099D0F1 /* AppDelegate.swift */; };
-		115D8E4123E37E080099D0F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E4023E37E080099D0F1 /* ViewController.swift */; };
+		115D8E4123E37E080099D0F1 /* SkillAllocateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E4023E37E080099D0F1 /* SkillAllocateViewController.swift */; };
 		115D8E4423E37E080099D0F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115D8E4223E37E080099D0F1 /* Main.storyboard */; };
 		115D8E4623E37E090099D0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 115D8E4523E37E090099D0F1 /* Assets.xcassets */; };
 		115D8E4923E37E090099D0F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115D8E4723E37E090099D0F1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1116B5A423E87B8E00E0244D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		115D8E3B23E37E080099D0F1 /* FirstRpg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstRpg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		115D8E3E23E37E080099D0F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		115D8E4023E37E080099D0F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		115D8E4023E37E080099D0F1 /* SkillAllocateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillAllocateViewController.swift; sourceTree = "<group>"; };
 		115D8E4323E37E080099D0F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		115D8E4523E37E090099D0F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		115D8E4823E37E090099D0F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +37,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1116B5A723E87BE700E0244D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				115D8E4223E37E080099D0F1 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1116B5A823E87C0700E0244D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				115D8E4023E37E080099D0F1 /* SkillAllocateViewController.swift */,
+				1116B5A423E87B8E00E0244D /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		115D8E3223E37E080099D0F1 = {
 			isa = PBXGroup;
 			children = (
@@ -54,10 +73,10 @@
 		115D8E3D23E37E080099D0F1 /* FirstRpg */ = {
 			isa = PBXGroup;
 			children = (
-				115D8E3E23E37E080099D0F1 /* AppDelegate.swift */,
-				115D8E4023E37E080099D0F1 /* ViewController.swift */,
-				115D8E4223E37E080099D0F1 /* Main.storyboard */,
+				1116B5A723E87BE700E0244D /* View */,
+				1116B5A823E87C0700E0244D /* Controllers */,
 				115D8E4523E37E090099D0F1 /* Assets.xcassets */,
+				115D8E3E23E37E080099D0F1 /* AppDelegate.swift */,
 				115D8E4723E37E090099D0F1 /* LaunchScreen.storyboard */,
 				115D8E4A23E37E090099D0F1 /* Info.plist */,
 			);
@@ -138,7 +157,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				115D8E4123E37E080099D0F1 /* ViewController.swift in Sources */,
+				1116B5A523E87B8E00E0244D /* MainViewController.swift in Sources */,
+				115D8E4123E37E080099D0F1 /* SkillAllocateViewController.swift in Sources */,
 				115D8E3F23E37E080099D0F1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

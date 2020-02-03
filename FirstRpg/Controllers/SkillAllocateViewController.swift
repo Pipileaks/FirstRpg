@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SkillAllocateViewController: UIViewController {
     
     
     var dex_value_cal = 0, str_value_cal = 0, int_value_cal = 0, cha_value_cal = 0, wis_value_cal = 0, lck_value_cal = 0  //bunun degerini daha sonra hesaplamak icin kullanilacak.
@@ -43,11 +43,19 @@ class ViewController: UIViewController {
     
     @IBAction func continueButtonPressed(_ sender: UIButton) {
         
-        
+        self.performSegue(withIdentifier: "goToMain", sender: self)
         
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goToMain" {
+            let destinationVC = segue.destination as! MainViewController
+            
+            destinationVC.characterAllocatedSkills = str_current_value
+        }
+    }
+    //Continue Button Here
     
     
     @IBOutlet weak var PointLeft_UILabel: UILabel!
