@@ -10,12 +10,12 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    var characterAllocatedSkills: Int?
-  
-    
-    
-
-
+    var characterAllocatedStr: Int?
+    var characterAllocatedDex: Int?
+    var characterAllocatedCon: Int?
+    var characterAllocatedWis: Int?
+    var characterAllocatedInt: Int?
+    var characterAllocatedCha: Int?
     
     @IBOutlet weak var strLabel: UILabel!
     
@@ -24,10 +24,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
-        
-        
-        strLabel.text = String(characterAllocatedSkills!)
+        allocatedSkillLog()
     }
     
     @IBAction func backToMain(_ sender: UIButton) {
@@ -35,6 +32,16 @@ class MainViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func allocatedSkillLog() {
+        
+        print(characterAllocatedStr)
+        print(characterAllocatedDex)
+        print(characterAllocatedCon)
+        print(characterAllocatedWis)
+        print(characterAllocatedInt)
+        print(characterAllocatedCha)
+        
+    }
     
-    
+
 }

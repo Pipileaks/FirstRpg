@@ -18,7 +18,7 @@ class SkillAllocateViewController: UIViewController {
     let absoluteTotalPoints = 20  // total stat pool
     
     
-
+    
     
     var str_current_value = 0
     var dex_current_value = 0
@@ -52,9 +52,13 @@ class SkillAllocateViewController: UIViewController {
         
         if segue.identifier == "goToMain" {
             let destinationVC = segue.destination as! MainViewController
-            
-            
-            destinationVC.characterAllocatedSkills = str_current_value
+                        
+             destinationVC.characterAllocatedStr = str_current_value
+             destinationVC.characterAllocatedDex = dex_current_value
+             destinationVC.characterAllocatedCon = lck_current_value
+             destinationVC.characterAllocatedWis = wis_current_value
+             destinationVC.characterAllocatedInt = int_current_value
+             destinationVC.characterAllocatedCha = cha_current_value
             
             
             
@@ -226,8 +230,6 @@ class SkillAllocateViewController: UIViewController {
         refreshMax()
         logstuff()
     }
-    
-    
     
     
     
