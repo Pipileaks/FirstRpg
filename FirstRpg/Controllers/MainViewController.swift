@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     var characterAllocatedInt: Int?
     var characterAllocatedCha: Int?
     
-    @IBOutlet weak var strLabel: UILabel!
+
     
 
     
