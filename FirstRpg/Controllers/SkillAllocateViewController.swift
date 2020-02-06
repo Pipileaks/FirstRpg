@@ -242,9 +242,9 @@ class SkillAllocateViewController: UIViewController {
         print("str_current_value: ", str_current_value)
         print("dex_current_value: ", dex_current_value)
         print("int_current_value: ", int_current_value)
-        print("int_current_value: ", cha_current_value)
-        print("int_current_value: ", wis_current_value)
-        print("int_current_value: ", lck_current_value)
+        print("cha_current_value: ", cha_current_value)
+        print("wis_current_value: ", wis_current_value)
+        print("lck_current_value: ", lck_current_value)
         
     }
     
