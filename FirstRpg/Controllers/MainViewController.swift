@@ -42,21 +42,9 @@ class MainViewController: UIViewController {
                     "storyFiveRight"    : "Burada storyFiveRight texti olcak"
                     ]
     
-    var storySelectionStatsBankDic : [String : [String : Int]] =
-                    [
-                    "epilogueLeft"    : ["str" : 2, "dex" : 2, "con" : 1, "physical" : 10],
-                    "epilogueRight"   : ["str" : 2, "dex" : 2, "con" : 1, "mental" : 10],
-                    "storyOneLeft"    : ["str" : 2, "dex" : 2, "con" : 1, "physical" : 10],
-                    "storyOneRight"   : ["str" : 2, "dex" : 2, "con" : 1, "mental" : 10],
-                    "storyTwoLeft"    : ["str" : 2, "dex" : 2, "con" : 1, "physical" : 10],
-                    "storyTwoRight"   : ["str" : 2, "dex" : 2, "con" : 1, "mental" : 10],
-                    "storyThreeLeft"  : ["str" : 2, "dex" : 2, "con" : 1, "physical" : 10],
-                    "storyThreeRight" : ["str" : 2, "dex" : 2, "con" : 1, "mental" : 10],
-                    "storyFourLeft"   : ["str" : 2, "dex" : 2, "con" : 1, "physical" : 10],
-                    "storyFourRight"  : ["str" : 2, "dex" : 2, "con" : 1, "mental" : 10],
-                    "storyFiveLeft"   : ["str" : 2, "dex" : 2, "con" : 1, "physical" : 10],
-                    "storyFiveRight"  : ["str" : 2, "dex" : 2, "con" : 1, "mental" : 10]
-                    ]
+    var storySelectionStatsBankDic : [String : Int] = ["int" : 2, "cha" : 2, "wis" : 1]
+ 
+                   
     
     
 
@@ -82,7 +70,7 @@ class MainViewController: UIViewController {
         print(characterAllocatedWis!)
         print(characterAllocatedInt!)
         print(characterAllocatedCha!)
-        print(storySelectionStatsBankDic["epilogueLeft"]!["str"]!)
+  
     }
     
     // This func makes a dict from char allocated stats
@@ -108,6 +96,11 @@ class MainViewController: UIViewController {
        
         
     }
+    
+ 
+    
+    
+    
     // This func rolls dice for player
     func diceRoller () {
         var allocatedStatsDiceDic : [String: Int] =
@@ -117,23 +110,57 @@ class MainViewController: UIViewController {
              "wis": characterAllocatedWis!*5,
              "int": characterAllocatedInt!*5,
              "cha": characterAllocatedCha!*5]
-      
         
-        var asdkj = storySelectionStatsBankDic.keys
-        
+        var pipi = [String: Int]()
         var sum = 0
-        for i in storySelectionStatsBankDic["epilogueLeft"]!.keys {
+        
+        var ata = [0]
+        
+        for (key, b) in allocatedStatsDiceDic {
             
-            while storySelectionStatsBankDic["epilogueLeft"]!.keys = "str"     {
-                
-            sum += i
+                  
+            var found = false
+            for (i, value) in  storySelectionStatsBankDic {
+                if key == i {
+                    found = true
+                    
+                    break
+                    
+                }
             }
             
-        
+            if found  {
+                
+                
+                sum += b
+                print("Skill Başına Toplam Değer:", sum)
+                print(key)
+                ata.append(b)
+                
+                pipi.updateValue(sum, forKey: key)
+                
+            }
+            
         }
-        print(sum)
-//        let random = Int.arc4random(in: 1...sum)
+        var umut = Int.random(in: 1...sum)
+        print("Random Number:", umut)
+        print("Toplam Değer:", sum)
+        var sortedPipi = pipi.sorted{ $1.1 > $0.1 }
+        print("Sortlu:", sortedPipi)
         
+        if umut <= sortedPipi[0].value {
+            print(sortedPipi[0].key)
+        } else if umut <= sortedPipi[1].value {
+            print(sortedPipi[1].key)
+        } else {
+            print(sortedPipi[2].key)
+        }
         
     }
+    
+   
+ 
+        
+
+    
 }
