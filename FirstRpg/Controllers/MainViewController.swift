@@ -101,8 +101,8 @@ class MainViewController: UIViewController {
     
     
     
-    // This func rolls dice for player
-    func diceRoller () {
+   // This func rolls dice for player
+    func diceRoller () -> String {
         var allocatedStatsDiceDic : [String: Int] =
             ["str": characterAllocatedStr!*5,
              "dex": characterAllocatedDex!*5,
@@ -115,6 +115,9 @@ class MainViewController: UIViewController {
         var sum = 0
         
         var ata = [0]
+        
+        var alp : String
+        var lastVersion : String
         
         for (key, b) in allocatedStatsDiceDic {
             
@@ -150,14 +153,19 @@ class MainViewController: UIViewController {
         
         if umut <= sortedPipi[0].value {
             print(sortedPipi[0].key)
+            alp = sortedPipi[0].key
         } else if umut <= sortedPipi[1].value {
             print(sortedPipi[1].key)
+            alp = sortedPipi[1].key
         } else {
             print(sortedPipi[2].key)
+            alp = sortedPipi[2].key
         }
-        
+        print("Alp Değer:", alp)
+        lastVersion = alp + ".png"
+        print("Last Version:", lastVersion)
+        return lastVersion
     }
-    
    
  
         
