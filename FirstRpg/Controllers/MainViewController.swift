@@ -164,6 +164,7 @@ class MainViewController: UIViewController {
         print("Alp Değer:", alp)
         lastVersion = alp + ".png"
         print("Last Version:", lastVersion)
+         print("Last Version:", lastVersion)
         return lastVersion
     }
    
