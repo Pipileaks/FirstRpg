@@ -279,32 +279,47 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="1"/>
+                                <connections>
+                                    <action selector="firstButtonAction:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="A2o-EX-x2h"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdK-dP-td2" userLabel="rollButtonTwo">
                                 <rect key="frame" x="107" y="482" width="50" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="2"/>
+                                <connections>
+                                    <action selector="secondButtonAction:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="2na-Pb-NhZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-JF-107" userLabel="rollButtonThree">
                                 <rect key="frame" x="165" y="482" width="50" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="3"/>
+                                <connections>
+                                    <action selector="thirdButtonAction:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="mKV-NK-EJY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNc-rp-KIP" userLabel="rollButtonFour">
                                 <rect key="frame" x="223" y="482" width="50" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="4"/>
+                                <connections>
+                                    <action selector="fourthButtonAction:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="TeD-c9-grM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yB5-nA-Eb2" userLabel="rollButtonFive">
                                 <rect key="frame" x="281" y="482" width="50" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="5"/>
+                                <connections>
+                                    <action selector="fifthButtonAction:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="Ys0-sx-zaJ"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAb-CJ-hjp" userLabel="nextButton">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAb-CJ-hjp" userLabel="nextButton">
                                 <rect key="frame" x="243" y="552" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
@@ -322,6 +337,7 @@
                         <outlet property="fButtonOutlet" destination="dRG-NS-kf5" id="FLz-HB-Enp"/>
                         <outlet property="ffthButtonOutlet" destination="yB5-nA-Eb2" id="gO3-LV-Gwh"/>
                         <outlet property="frButtonOutlet" destination="uNc-rp-KIP" id="dG2-Nh-t4G"/>
+                        <outlet property="nextButtonOutlet" destination="hAb-CJ-hjp" id="YEm-VE-Zby"/>
                         <outlet property="sButtonOutlet" destination="xdK-dP-td2" id="g6f-CS-vRE"/>
                         <outlet property="tButtonOutlet" destination="ObT-JF-107" id="Vsk-ux-WqF"/>
                     </connections>
