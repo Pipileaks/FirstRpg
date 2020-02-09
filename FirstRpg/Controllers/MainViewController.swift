@@ -66,12 +66,48 @@ class MainViewController: UIViewController {
         
     }
     
+    
+    @IBAction func nextButton(_ sender: UIButton) {
+        //Eğer hepsi tutuyorsa bu button "başarılı" aktif
+        //Eğer 3 roll hakkında başarısız olursa  bu button "başarısız" aktif
+        
+        
+        
+    }
+    
+    
     @IBAction func backToMain(_ sender: UIButton) {
         
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func mainRollButton(_ sender: UIButton) {
+        
+        //Must Be A Counter
+        
+        var arrayss = [button1(), button2(), button3(), button4(), button5()]
+        
+        var strCounter = 0
+        var wisCounter = 0
+        var dexCounter = 0
+        
+        for i in arrayss {
+
+            if i == "str" {
+                strCounter += 1
+            } else if i == "wis" {
+                wisCounter += 1
+            } else if i == "dex" {
+                dexCounter += 1
+            }
+            
+        }
+        
+        print("Str:", strCounter, "Wis:", wisCounter, "Dex:", dexCounter)
+        print(arrayss)
+        
+      
+        
         
         button1()
         button2()
@@ -81,9 +117,11 @@ class MainViewController: UIViewController {
     }
     
     
-    
-    
-    
+//    func roll1() -> String {
+//              return diceRoller()
+//          }
+//
+    //    var storySelectionStatsBankDic : [String : Int] = ["str" : 2, "dex" : 2, "wis" : 1]
     
     //        @IBOutlet weak var fButtonOutlet: UIButton!
     //           @IBOutlet weak var sButtonOutlet: UIButton!
@@ -92,34 +130,43 @@ class MainViewController: UIViewController {
     //           @IBOutlet weak var ffthButtonOutlet: UIButton!
     
     
- func button1 () {
-      
-      let button1Image = diceRoller()
-      
-      fButtonOutlet.setImage(UIImage(named: button1Image + ".png"), for: .normal)
-
-  }
-  func button2 () {
-      
-      let button2Image = diceRoller()
-      
-      sButtonOutlet.setImage(UIImage(named: button2Image + ".png"), for: .normal)
-  }
-  func button3 () {
-    
-      let button3Image = diceRoller()
-      tButtonOutlet.setImage(UIImage(named: button3Image + ".png"), for: .normal)
-  }
-  func button4 () {
-    
-      let button4Image = diceRoller()
-      frButtonOutlet.setImage(UIImage(named: button4Image + ".png"), for: .normal)
-  }
-  func button5 () {
-    
-      let button5Image = diceRoller()
-      ffthButtonOutlet.setImage(UIImage(named: button5Image + ".png"), for: .normal)
-  }
+    func button1 () -> String {
+        
+        let button1Image = diceRoller()
+        
+        fButtonOutlet.setImage(UIImage(named: button1Image + ".png"), for: .normal)
+        
+        //       var donen = Dictionary<String, Int>()
+        //
+        //        donen[button1Image] = 1
+        
+        return button1Image
+    }
+    func button2 () -> String {
+        
+        let button2Image = diceRoller()
+        
+        sButtonOutlet.setImage(UIImage(named: button2Image + ".png"), for: .normal)
+        return button2Image
+    }
+    func button3 () -> String  {
+        
+        let button3Image = diceRoller()
+        tButtonOutlet.setImage(UIImage(named: button3Image + ".png"), for: .normal)
+        return button3Image
+    }
+    func button4 () -> String  {
+        
+        let button4Image = diceRoller()
+        frButtonOutlet.setImage(UIImage(named: button4Image + ".png"), for: .normal)
+        return button4Image
+    }
+    func button5 () -> String  {
+        
+        let button5Image = diceRoller()
+        ffthButtonOutlet.setImage(UIImage(named: button5Image + ".png"), for: .normal)
+        return button5Image
+    }
     
     
     
