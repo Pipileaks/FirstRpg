@@ -23,44 +23,44 @@ class MainViewController: UIViewController {
     @IBOutlet weak var frButtonOutlet: UIButton!
     @IBOutlet weak var ffthButtonOutlet: UIButton!
     
-
-  
+    
+    
     
     var storyBankDic : [String : String] =
-                    ["prologue" : "Lanet olsun...",
-                    "storyOne" : "Burada storyOne texti olcak",
-                    "storyTwo" : "Burada storyTwo texti olcak",
-                    "storyThree" : "Burada storyThree texti olcak",
-                    "storyFour" : "Burada storyFour texti olcak",
-                    "storyFive" : "Burada storyFive texti olcak"]
-            
-
+        ["prologue" : "Lanet olsun...",
+         "storyOne" : "Burada storyOne texti olcak",
+         "storyTwo" : "Burada storyTwo texti olcak",
+         "storyThree" : "Burada storyThree texti olcak",
+         "storyFour" : "Burada storyFour texti olcak",
+         "storyFive" : "Burada storyFive texti olcak"]
+    
+    
     var storySelectionBankDic : [String : String] =
-                    [
-                    "epilogueLeft"      : "Arkadaşının arabası...",
-                    "epilogueRight"     : "Otobüs soforu",
-                    "storyOneLeft"      : "Burada storyOneLeft texti olcak",
-                    "storyOneRight"     : "Burada storyOneRight texti olcak",
-                    "storyTwoLeft"      : "Burada storyTwoLeft texti olcak",
-                    "storyTwoRight"     : "Burada storyTwoRight texti olcak",
-                    "storyThreeLeft"    : "Burada storyThreeLeft texti olcak",
-                    "storyThreeRight"   : "Burada storyThreeRight texti olcak",
-                    "storyFourLeft"     : "Burada storyFourLeft texti olcak",
-                    "storyFourRight"    : "Burada storyFourRight texti olcak",
-                    "storyFiveLeft"     : "Burada storyFiveLeft texti olcak",
-                    "storyFiveRight"    : "Burada storyFiveRight texti olcak"
-                    ]
+        [
+            "epilogueLeft"      : "Arkadaşının arabası...",
+            "epilogueRight"     : "Otobüs soforu",
+            "storyOneLeft"      : "Burada storyOneLeft texti olcak",
+            "storyOneRight"     : "Burada storyOneRight texti olcak",
+            "storyTwoLeft"      : "Burada storyTwoLeft texti olcak",
+            "storyTwoRight"     : "Burada storyTwoRight texti olcak",
+            "storyThreeLeft"    : "Burada storyThreeLeft texti olcak",
+            "storyThreeRight"   : "Burada storyThreeRight texti olcak",
+            "storyFourLeft"     : "Burada storyFourLeft texti olcak",
+            "storyFourRight"    : "Burada storyFourRight texti olcak",
+            "storyFiveLeft"     : "Burada storyFiveLeft texti olcak",
+            "storyFiveRight"    : "Burada storyFiveRight texti olcak"
+    ]
     
     var storySelectionStatsBankDic : [String : Int] = ["str" : 2, "dex" : 2, "wis" : 1]
- 
-                   
     
     
-
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         allocatedSkillLog()
         makeAllocatedStatsDic()
         
@@ -72,7 +72,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func mainRollButton(_ sender: UIButton) {
-
+        
         button1()
         button2()
         button3()
@@ -83,38 +83,44 @@ class MainViewController: UIViewController {
     
     
     
-               
-            
+    
+    
     //        @IBOutlet weak var fButtonOutlet: UIButton!
     //           @IBOutlet weak var sButtonOutlet: UIButton!
     //           @IBOutlet weak var tButtonOutlet: UIButton!
     //           @IBOutlet weak var frButtonOutlet: UIButton!
     //           @IBOutlet weak var ffthButtonOutlet: UIButton!
-            
-             
-    func button1 () {
-        fButtonOutlet.setImage(UIImage(named: diceRoller()), for: .normal)
-        
+    
+    
+ func button1 () {
       
-        
-    }
-    func button2 () {
+      let button1Image = diceRoller()
+      
+      fButtonOutlet.setImage(UIImage(named: button1Image + ".png"), for: .normal)
 
-        sButtonOutlet.setImage(UIImage(named: diceRoller()), for: .normal)
-    }
-    func button3 () {
-
-        tButtonOutlet.setImage(UIImage(named: diceRoller()), for: .normal)
-    }
-    func button4 () {
-
-        frButtonOutlet.setImage(UIImage(named: diceRoller()), for: .normal)
-    }
-    func button5 () {
-
-        ffthButtonOutlet.setImage(UIImage(named: diceRoller()), for: .normal)
-    }
-   
+  }
+  func button2 () {
+      
+      let button2Image = diceRoller()
+      
+      sButtonOutlet.setImage(UIImage(named: button2Image + ".png"), for: .normal)
+  }
+  func button3 () {
+    
+      let button3Image = diceRoller()
+      tButtonOutlet.setImage(UIImage(named: button3Image + ".png"), for: .normal)
+  }
+  func button4 () {
+    
+      let button4Image = diceRoller()
+      frButtonOutlet.setImage(UIImage(named: button4Image + ".png"), for: .normal)
+  }
+  func button5 () {
+    
+      let button5Image = diceRoller()
+      ffthButtonOutlet.setImage(UIImage(named: button5Image + ".png"), for: .normal)
+  }
+    
     
     
     
@@ -124,13 +130,13 @@ class MainViewController: UIViewController {
     
     func allocatedSkillLog() {
         
-//        print(characterAllocatedStr!)
-//        print(characterAllocatedDex!)
-//        print(characterAllocatedCon!)
-//        print(characterAllocatedWis!)
-//        print(characterAllocatedInt!)
-//        print(characterAllocatedCha!)
-  
+        //        print(characterAllocatedStr!)
+        //        print(characterAllocatedDex!)
+        //        print(characterAllocatedCon!)
+        //        print(characterAllocatedWis!)
+        //        print(characterAllocatedInt!)
+        //        print(characterAllocatedCha!)
+        
     }
     
     // This func makes a dict from char allocated stats
@@ -148,20 +154,20 @@ class MainViewController: UIViewController {
     // This func makes a dict from char allocated stats and make dice percentages
     func makeAllocatedStatsPercDic () {
         let allocatedStatsPercDic : [String: Int] = ["str": characterAllocatedStr!*5,
-                                                 "dex": characterAllocatedDex!*5,
-                                                 "con": characterAllocatedCon!*5,
-                                                 "wis": characterAllocatedWis!*5,
-                                                 "int": characterAllocatedInt!*5,
-                                                 "cha": characterAllocatedCha!*5]
-       
+                                                     "dex": characterAllocatedDex!*5,
+                                                     "con": characterAllocatedCon!*5,
+                                                     "wis": characterAllocatedWis!*5,
+                                                     "int": characterAllocatedInt!*5,
+                                                     "cha": characterAllocatedCha!*5]
+        
         
     }
     
- 
     
     
     
-   // This func rolls dice for player
+    
+    // This func rolls dice for player
     func diceRoller () -> String {
         let allocatedStatsDiceDic : [String: Int] =
             ["str": characterAllocatedStr!+1*5,
@@ -181,7 +187,7 @@ class MainViewController: UIViewController {
         
         for (key, b) in allocatedStatsDiceDic {
             
-                  
+            
             var found = false
             for (i, value) in  storySelectionStatsBankDic {
                 if key == i {
@@ -197,7 +203,7 @@ class MainViewController: UIViewController {
                 
                 sum += b
                 
-               
+                
                 ata.append(b)
                 
                 pipi.updateValue(sum, forKey: key)
@@ -209,27 +215,27 @@ class MainViewController: UIViewController {
         
         
         let sortedPipi = pipi.sorted{ $1.1 > $0.1 }
-       
+        
         
         if umut <= sortedPipi[0].value {
-           
+            
             alp = sortedPipi[0].key
         } else if umut <= sortedPipi[1].value {
-           
+            
             alp = sortedPipi[1].key
         } else {
             
             alp = sortedPipi[2].key
         }
-       
-        lastVersion = alp + ".png"
         
-         print("Last Version:", lastVersion)
+        lastVersion = alp
+        
+        print("Last Version:", lastVersion)
         return lastVersion
     }
-   
- 
-        
-
+    
+    
+    
+    
     
 }
