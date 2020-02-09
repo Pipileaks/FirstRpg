@@ -110,7 +110,21 @@
 			isa = PBXProject;
 			attributes = {
 				KnownAssetTags = (
+					cha,
+					cha.png,
+					con,
+					con.png,
+					dex,
+					dex.png,
+					int,
+					int.png,
+					lck,
+					lck.png,
+					str,
+					str.png,
 					strSt,
+					wis,
+					wis.png,
 				);
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;

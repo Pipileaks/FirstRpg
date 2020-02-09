@@ -233,7 +233,7 @@
                                 <rect key="frame" x="28" y="74" width="319" height="216"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <mutableString key="text">Lanet olsun sabah alarmın çalmadı.  Uçağına geç kalmak üzeresin.  Bir yandan biletini değişimsiz aldığın için kendine lanet ederken, bir yandan da hızlıca giyinmeye ve eşyalarını toplamaya başladın. Otobüs durağına vardığında, olanların hepsi yetmezmiş gibi bir de az farkla otobüsü kaçırdığını fark ettin.   Ne yapacaksın?</mutableString>
+                                <string key="text">Lanet olsun sabah alarmın çalmadı.  Uçağına geç kalmak üzeresin.  Bir yandan biletini değişimsiz aldığın için kendine lanet ederken, bir yandan da hızlıca giyinmeye ve eşyalarını toplamaya başladın. Otobüs durağına vardığında, olanların hepsi yetmezmiş gibi bir de az farkla otobüsü kaçırdığını fark ettin.   Ne yapacaksın?</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -270,8 +270,11 @@
                                 <rect key="frame" x="162" y="429" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ROLL 3"/>
+                                <connections>
+                                    <action selector="mainRollButton:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="Ul2-xz-2Vq"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRG-NS-kf5" userLabel="rollButtonOne">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="firstButtonImage" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRG-NS-kf5" userLabel="rollButtonOne">
                                 <rect key="frame" x="49" y="482" width="50" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -312,6 +315,13 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="fButtonOutlet" destination="dRG-NS-kf5" id="FLz-HB-Enp"/>
+                        <outlet property="ffthButtonOutlet" destination="yB5-nA-Eb2" id="gO3-LV-Gwh"/>
+                        <outlet property="frButtonOutlet" destination="uNc-rp-KIP" id="dG2-Nh-t4G"/>
+                        <outlet property="sButtonOutlet" destination="xdK-dP-td2" id="g6f-CS-vRE"/>
+                        <outlet property="tButtonOutlet" destination="ObT-JF-107" id="Vsk-ux-WqF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xh1-GH-Vpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
