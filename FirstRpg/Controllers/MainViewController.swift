@@ -54,9 +54,21 @@ class MainViewController: UIViewController {
     
     var storySelectionStatsBankDic : [String : Int] = ["str" : 2, "dex" : 2, "wis" : 1]
     var storyInt = ["str", "str", "dex", "dex", "wis", "z"]
-    var controlMeka : Bool?
+    
     var rollCount = 0
     var arrayss = ["z"]
+    var fB = ""
+    var sB = ""
+    var tB = ""
+    var frB = ""
+    var ffthB = ""
+    var umut = ""
+    var fcounter = true
+    var scounter = true
+    var tcounter = true
+    var frcounter = true
+    var ffthcounter = true
+    var controlMeka : Bool?
     
     
     override func viewDidLoad() {
@@ -66,75 +78,63 @@ class MainViewController: UIViewController {
         makeAllocatedStatsDic()
         
     }
-   
-
+    
+    @IBAction func firstButtonCancel(_ sender: Any) {
+        fButtonOutlet.isSelected = false
+    }
+    
+    
     @IBAction func firstButtonAction(_ sender: UIButton) {
-        fButtonOutlet.isUserInteractionEnabled = true
         
-        if fButtonOutlet.isUserInteractionEnabled == true {
-            fButtonOutlet.isUserInteractionEnabled = false
-            fButtonOutlet.setTitle("Kitlendi", for: .normal)
-           
-        } else if fButtonOutlet.isUserInteractionEnabled == false {
-            fButtonOutlet.isUserInteractionEnabled = true
-            fButtonOutlet.setTitle("", for: .normal)
-            
+        
+        if sender.isTouchInside == true {
+            fButtonOutlet.isSelected = true
+        }
+        
+    }
+    
+    @IBAction func secondButtonCancel(_ sender: Any) {
+        sButtonOutlet.isSelected = false
+    }
+    @IBAction func secondButtonAction(_ sender: UIButton) {
+        
+        if sender.isTouchInside == true {
+            sButtonOutlet.isSelected = true
+        }
+        
+    }
+    
+    @IBAction func thirdButtonCancel(_ sender: Any) {
+        tButtonOutlet.isSelected = false
+    }
+    
+    @IBAction func thirdButtonAction(_ sender: UIButton) {
+        
+        if sender.isTouchInside == true {
+            tButtonOutlet.isSelected = true
+        }
+        
+    }
+    
+    @IBAction func fourthButtonCancel(_ sender: Any) {
+        frButtonOutlet.isSelected = false
+    }
+    
+    
+    @IBAction func fourthButtonAction(_ sender: UIButton) {
+        if sender.isTouchInside == true {
+            frButtonOutlet.isSelected = true
         }
     }
     
-    @IBAction func secondButtonAction(_ sender: UIButton) {
-        
-        sButtonOutlet.isUserInteractionEnabled = true
-
-        if sButtonOutlet.isUserInteractionEnabled == true {
-            sButtonOutlet.isUserInteractionEnabled = false
-            sButtonOutlet.setTitle("Kitlendi", for: .normal)
-
-        }
-         if sButtonOutlet.isUserInteractionEnabled == false {
-            sButtonOutlet.isUserInteractionEnabled = true
-            sButtonOutlet.setTitle("", for: .normal)
-
-        }
-        
+    @IBAction func fifthButtonCancel(_ sender: Any) {
+        ffthButtonOutlet.isSelected = false
     }
-    @IBAction func thirdButtonAction(_ sender: UIButton) {
-        tButtonOutlet.isUserInteractionEnabled = true
-
-        if tButtonOutlet.isUserInteractionEnabled == true {
-            tButtonOutlet.isUserInteractionEnabled = false
-            tButtonOutlet.setTitle("Kitlendi", for: .normal)
-
-        } else if tButtonOutlet.isUserInteractionEnabled == false {
-            tButtonOutlet.isUserInteractionEnabled = true
-            tButtonOutlet.setTitle("", for: .normal)
-
-        }
-    }
-    @IBAction func fourthButtonAction(_ sender: UIButton) {
-     frButtonOutlet.isUserInteractionEnabled = true
-
-        if frButtonOutlet.isUserInteractionEnabled == true {
-            frButtonOutlet.isUserInteractionEnabled = false
-            frButtonOutlet.setTitle("Kitlendi", for: .normal)
-
-        } else if frButtonOutlet.isUserInteractionEnabled == false {
-            frButtonOutlet.isUserInteractionEnabled = true
-            frButtonOutlet.setTitle("", for: .normal)
-
-        }
-    }
+    
     @IBAction func fifthButtonAction(_ sender: UIButton) {
-        ffthButtonOutlet.isUserInteractionEnabled = true
-
-        if ffthButtonOutlet.isUserInteractionEnabled == true {
-            ffthButtonOutlet.isUserInteractionEnabled = false
-            ffthButtonOutlet.setTitle("Kitlendi", for: .normal)
-
-        } else if ffthButtonOutlet.isUserInteractionEnabled == false {
-            ffthButtonOutlet.isUserInteractionEnabled = true
-            ffthButtonOutlet.setTitle("", for: .normal)
-
+        
+        if sender.isTouchInside == true {
+            ffthButtonOutlet.isSelected = true
         }
     }
     
@@ -158,60 +158,37 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func mainRollButton(_ sender: UIButton) {
-        
-        //Must Be A Counter
-        
-        
+
         //Kaç defa basıldı
         rollCount += 1
-        if rollCount == 3 {
+        if rollCount == 4 {
             sender.isUserInteractionEnabled = false
             sender.setTitle("Hakkın Bitti", for: .normal)
         }
-        
-
-        
-        
         //Kaç defa basıldı
         
-       
+        
+        //Bütün butonların hangi şartlarda çağırılacağı
+        if rollCount != 4 || controlMeka == false {
+                 button1()
+                 button2()
+                 button3()
+                 button4()
+                 button5()
+                 
+             }
+        
+       //Bütün butonların hangi şartlarda çağırılacağı
+        
+        
+        //Buttonlar gelen değerlerin ve istenilen değerlerin sortlama işlemi
         var sortedArray = storyInt.sorted(by: >)
-        
-    
+        var sortedButtonArray = arrayss.sorted(by: >)
+       //Buttonlar gelen değerlerin ve istenilen değerlerin sortlama işlemi
 
-        
-        
-        if fButtonOutlet.isUserInteractionEnabled == true {
-            arrayss.append(button1())
-            
-        }
-        if sButtonOutlet.isUserInteractionEnabled == true {
-            arrayss.append(button2())
-            
-        }
-        if tButtonOutlet.isUserInteractionEnabled == true {
-            arrayss.append(button3())
-            
-        }
-        if frButtonOutlet.isUserInteractionEnabled == true {
-            arrayss.append(button4())
-            
-        }
-        if ffthButtonOutlet.isUserInteractionEnabled == true {
-            arrayss.append(button5())
-            
-        }
-        
-        
        
         
-        
-        
-        
-        var sortedButtonArray = arrayss.sorted(by: >)
-        
-        
-        
+        //Kullanıcınun button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
         func control() -> Bool {
             if sortedArray == sortedButtonArray {
                 return true
@@ -220,15 +197,35 @@ class MainViewController: UIViewController {
             }
             
         }
+        //Kullanıcınun button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
         
-        controlMeka = control()
+        
+        
+        //Next Button'un ne zaman açılacağını karar veriyor.
+        let controlMeka = control()
+        
+        //Next Button Control
+        let controlNext = controlMeka
+        
+        if controlNext == true {
+            nextButtonOutlet.isHidden = false
+        } else {
+            nextButtonOutlet.isHidden = true
+        }
+       //Next Button'un ne zaman açılacağını karar veriyor.
+        
+ counterLogs()
+    }
+    
+    
+    func counterLogs() {
         
         var strCounter = 0
         var wisCounter = 0
         var dexCounter = 0
         
         for i in arrayss {
-
+            
             if i == "str" {
                 strCounter += 1
             } else if i == "wis" {
@@ -239,64 +236,128 @@ class MainViewController: UIViewController {
             
         }
         
+        
         print("Str:", strCounter, "Wis:", wisCounter, "Dex:", dexCounter)
         
+    }
+    
+    
+    
+    func button1 () {
+        diceRoller()
         
-        //Next Button Control
-        var controlNext = controlMeka
-        
-        if controlNext == true {
-            nextButtonOutlet.isHidden = false
-        } else {
-            nextButtonOutlet.isHidden = true
+        if fButtonOutlet.isSelected == false {
+            
+            fB = diceRoller()
+            fButtonOutlet.setImage(UIImage(named: fB + ".png"), for: .normal)
+            fcounter = true
+        } else if fButtonOutlet.isSelected == true && fcounter == true {
+            fcounter = false
+            
+            arrayss.append(fB)
+            
+            
         }
-        //Next Button Control
+        else if fButtonOutlet.isSelected == true && fcounter == false {
+            fButtonOutlet.setImage(UIImage(named: fB + ".png"), for: .normal)
+            
+        }
         
     }
     
     
-
+    func button2 () {
+        diceRoller()
+        
+        if sButtonOutlet.isSelected == false {
+            
+            sB = diceRoller()
+            sButtonOutlet.setImage(UIImage(named: sB + ".png"), for: .normal)
+            scounter = true
+        } else if sButtonOutlet.isSelected == true && scounter == true {
+            scounter = false
+            
+            arrayss.append(sB)
+            
+            
+        }
+        else if sButtonOutlet.isSelected == true && scounter == false {
+            sButtonOutlet.setImage(UIImage(named: sB + ".png"), for: .normal)
+            
+        }
+        
+    }
+    
+    func button3 () {
+        diceRoller()
+        
+        if tButtonOutlet.isSelected == false {
+            
+            tB = diceRoller()
+            tButtonOutlet.setImage(UIImage(named: tB + ".png"), for: .normal)
+            tcounter = true
+        } else if tButtonOutlet.isSelected == true && tcounter == true {
+            tcounter = false
+            
+            arrayss.append(tB)
+            
+            
+        }
+        else if tButtonOutlet.isSelected == true && tcounter == false {
+            tButtonOutlet.setImage(UIImage(named: tB + ".png"), for: .normal)
+            
+        }
+        
+    }
+    
+    func button4 () {
+        diceRoller()
+        
+        if frButtonOutlet.isSelected == false {
+            
+            frB = diceRoller()
+            frButtonOutlet.setImage(UIImage(named: frB + ".png"), for: .normal)
+            frcounter = true
+        } else if frButtonOutlet.isSelected == true && frcounter == true {
+            frcounter = false
+            
+            arrayss.append(frB)
+            
+            
+        }
+        else if frButtonOutlet.isSelected == true && frcounter == false {
+            frButtonOutlet.setImage(UIImage(named: frB + ".png"), for: .normal)
+            
+        }
+        
+    }
+    
+    func button5 () {
+        diceRoller()
+        
+        if ffthButtonOutlet.isSelected == false {
+            
+            ffthB = diceRoller()
+            ffthButtonOutlet.setImage(UIImage(named: ffthB + ".png"), for: .normal)
+            ffthcounter = true
+        } else if ffthButtonOutlet.isSelected == true && ffthcounter == true {
+            ffthcounter = false
+            
+            arrayss.append(ffthB)
+            
+            
+        }
+        else if ffthButtonOutlet.isSelected == true && ffthcounter == false {
+            ffthButtonOutlet.setImage(UIImage(named: ffthB + ".png"), for: .normal)
+            
+        }
+        
+    }
     
     
-    func button1 () -> String {
-        
-        
-        
-        let button1Image = diceRoller()
-        
-        fButtonOutlet.setImage(UIImage(named: button1Image + ".png"), for: .normal)
-        
-        //       var donen = Dictionary<String, Int>()
-        //
-        //        donen[button1Image] = 1
-        
-        return button1Image
-    }
-    func button2 () -> String {
-        
-        let button2Image = diceRoller()
-        
-        sButtonOutlet.setImage(UIImage(named: button2Image + ".png"), for: .normal)
-        return button2Image
-    }
-    func button3 () -> String  {
-        
-        let button3Image = diceRoller()
-        tButtonOutlet.setImage(UIImage(named: button3Image + ".png"), for: .normal)
-        return button3Image
-    }
-    func button4 () -> String  {
-        
-        let button4Image = diceRoller()
-        frButtonOutlet.setImage(UIImage(named: button4Image + ".png"), for: .normal)
-        return button4Image
-    }
-    func button5 () -> String  {
-        
-        let button5Image = diceRoller()
-        ffthButtonOutlet.setImage(UIImage(named: button5Image + ".png"), for: .normal)
-        return button5Image
-    }
+    
+    
+    
     
     
     
