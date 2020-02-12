@@ -52,32 +52,42 @@ class MainViewController: UIViewController {
             "storyFiveRight"    : "Burada storyFiveRight texti olcak"
     ]
     
+    var pyhsicalTotal = 100
+    var mentalTotal = 100
     var storySelectionStatsBankDic : [String : Int] = ["str" : 2, "dex" : 2, "wis" : 1]
+    var storySelectionStatsBankDic2 : [String : Int] = ["con" : 1, "int" : 3, "cha" : 1]
+    // İstediğimiz değerlerin yazıldığı arrayler bloğu
     var storyInt = ["str", "str", "dex", "dex", "wis", "z"]
+    var storyInt2 = ["con", "int", "int", "int", "cha", "z"]
+    // İstediğimiz değerlerin yazıldığı arrayler bloğu
     
-    var rollCount = 0
-    var arrayss = ["z"]
+    var rollCount = 0 // Kac defa rollendiğini sayar
+    var arrayss = ["z"] // Kullanıcının attığı değerlerin yazıldığı array
+    var controlMeka : Bool? // Kullanıcının seçtiği ve bizim istediğimiz değerleri kontrol etmeye yarar
+     // Imajın ismini almak için olusturduğumuz değişkenler bloğu
     var fB = ""
     var sB = ""
     var tB = ""
     var frB = ""
-    var ffthB = ""
-    var umut = ""
+    var ffthB = "" //
+     // Imajın ismini almak için olusturduğumuz değişkenler bloğu
+    var percentageRandomNumber = "" // Zarlara hangi statın geleceğini kontrol ettiğimiz rastgele sayı
+    // Her tuş için ayrı ayrı appendleme işlemini kontrol etmeye yarayan counterlar bloğu
     var fcounter = true
     var scounter = true
     var tcounter = true
     var frcounter = true
     var ffthcounter = true
-    var controlMeka : Bool?
+    // Her tuş için ayrı ayrı appendleme işlemini kontrol etmeye yarayan counterlar bloğu
+    var storyCounter = 0 // Hikayede nerede olduğumuz belirleyecek değişken
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        allocatedSkillLog()
-        makeAllocatedStatsDic()
-        
     }
+    
+    // Stat Buttonlarının Bloğu
     
     @IBAction func firstButtonCancel(_ sender: Any) {
         fButtonOutlet.isSelected = false
@@ -137,7 +147,7 @@ class MainViewController: UIViewController {
             ffthButtonOutlet.isSelected = true
         }
     }
-    
+    // Stat Buttonlarının Bloğu
     
     
     
@@ -145,6 +155,8 @@ class MainViewController: UIViewController {
     
     
     @IBAction func nextButton(_ sender: UIButton) {
+        
+        
         //Eğer hepsi tutuyorsa bu button "başarılı" aktif
         //Eğer 3 roll hakkında başarısız olursa  bu button "başarısız" aktif
         
@@ -152,13 +164,22 @@ class MainViewController: UIViewController {
     }
     
     
+    
     @IBAction func backToMain(_ sender: UIButton) {
         
         self.dismiss(animated: true, completion: nil)
     }
     
+    // Zarların atılmasını ve gerekli kontrollerin yapılmasını sağlayan roll butonu bloğu
+    
     @IBAction func mainRollButton(_ sender: UIButton) {
 
+        fButtonOutlet.isHidden = false
+        sButtonOutlet.isHidden = false
+        tButtonOutlet.isHidden = false
+        frButtonOutlet.isHidden = false
+        ffthButtonOutlet.isHidden = false
+        
         //Kaç defa basıldı
         rollCount += 1
         if rollCount == 4 {
@@ -169,7 +190,7 @@ class MainViewController: UIViewController {
         
         
         //Bütün butonların hangi şartlarda çağırılacağı
-        if rollCount != 4 || controlMeka == false {
+        if rollCount != 4 || (rollCount == 4 && controlMeka == false) {
                  button1()
                  button2()
                  button3()
@@ -188,7 +209,7 @@ class MainViewController: UIViewController {
 
        
         
-        //Kullanıcınun button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
+        //Kullanıcının button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
         func control() -> Bool {
             if sortedArray == sortedButtonArray {
                 return true
@@ -197,7 +218,7 @@ class MainViewController: UIViewController {
             }
             
         }
-        //Kullanıcınun button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
+        //Kullanıcının button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
         
         
         
@@ -207,41 +228,47 @@ class MainViewController: UIViewController {
         //Next Button Control
         let controlNext = controlMeka
         
-        if controlNext == true {
+        if controlNext == true || rollCount == 4 {
             nextButtonOutlet.isHidden = false
         } else {
             nextButtonOutlet.isHidden = true
         }
        //Next Button'un ne zaman açılacağını karar veriyor.
         
- counterLogs()
+ // counterLogs()
     }
     
+    // Zarların atılmasını ve gerekli kontrollerin yapılmasını sağlayan roll butonu bloğu
     
-    func counterLogs() {
-        
-        var strCounter = 0
-        var wisCounter = 0
-        var dexCounter = 0
-        
-        for i in arrayss {
-            
-            if i == "str" {
-                strCounter += 1
-            } else if i == "wis" {
-                wisCounter += 1
-            } else if i == "dex" {
-                dexCounter += 1
-            }
-            
-        }
-        
-        
-        print("Str:", strCounter, "Wis:", wisCounter, "Dex:", dexCounter)
-        
-    }
+    // Atılan zarların değerleri biz bakabilelim diye yazdığımız kısım
+    
+//    func counterLogs() {
+//
+//        var strCounter = 0
+//        var wisCounter = 0
+//        var dexCounter = 0
+//
+//        for i in arrayss {
+//
+//            if i == "str" {
+//                strCounter += 1
+//            } else if i == "wis" {
+//                wisCounter += 1
+//            } else if i == "dex" {
+//                dexCounter += 1
+//            }
+//
+//        }
+//
+//
+//        print("Str:", strCounter, "Wis:", wisCounter, "Dex:", dexCounter)
+//
+//    }
+    
+    // Atılan zarların değerleri biz bakabilelim diye yazdığımız kısım TEKRAR ACARSAN mainRollButton da CAĞIRMAYI UNUTMA!!!
     
     
+    // Kullanıcının Attığı Zar Buttonlarının Fonksiyonlar Bloğu
     
     func button1 () {
         diceRoller()
@@ -353,6 +380,7 @@ class MainViewController: UIViewController {
         }
         
     }
+    // Kullanıcının Attığı Zar Buttonlarının Fonksiyonlar Bloğu
     
     
     
@@ -365,8 +393,7 @@ class MainViewController: UIViewController {
     
     
     
-    
-    func allocatedSkillLog() {
+    //func allocatedSkillLog() {
         
         //        print(characterAllocatedStr!)
         //        print(characterAllocatedDex!)
@@ -375,45 +402,26 @@ class MainViewController: UIViewController {
         //        print(characterAllocatedInt!)
         //        print(characterAllocatedCha!)
         
-    }
+    //}
     
     // This func makes a dict from char allocated stats
-    func makeAllocatedStatsDic () {
-        let allocatedStatsDic : [String: Int] = ["str": characterAllocatedStr!,
-                                                 "dex": characterAllocatedDex!,
-                                                 "con": characterAllocatedCon!,
-                                                 "wis": characterAllocatedWis!,
-                                                 "int": characterAllocatedInt!,
-                                                 "cha": characterAllocatedCha!]
-        
-        
-    }
+    
     
     // This func makes a dict from char allocated stats and make dice percentages
-    func makeAllocatedStatsPercDic () {
-        let allocatedStatsPercDic : [String: Int] = ["str": characterAllocatedStr!*5,
-                                                     "dex": characterAllocatedDex!*5,
-                                                     "con": characterAllocatedCon!*5,
-                                                     "wis": characterAllocatedWis!*5,
-                                                     "int": characterAllocatedInt!*5,
-                                                     "cha": characterAllocatedCha!*5]
-        
-        
-    }
     
     
     
     
     
-    // This func rolls dice for player
+    // This func rolls dice for buttons
     func diceRoller () -> String {
         let allocatedStatsDiceDic : [String: Int] =
-            ["str": characterAllocatedStr!+1*5,
-             "dex": characterAllocatedDex!+1*5,
-             "con": characterAllocatedCon!+1*5,
-             "wis": characterAllocatedWis!+1*5,
-             "int": characterAllocatedInt!+1*5,
-             "cha": characterAllocatedCha!+1*5]
+            ["str": characterAllocatedStr!*5+1,
+            "dex": characterAllocatedDex!*5+1,
+            "con": characterAllocatedCon!*5+1,
+            "wis": characterAllocatedWis!*5+1,
+            "int": characterAllocatedInt!*5+1,
+            "cha": characterAllocatedCha!*5+1]
         
         var pipi = [String: Int]()
         var sum = 0
@@ -449,16 +457,16 @@ class MainViewController: UIViewController {
             }
             
         }
-        let umut = Int.random(in: 1...sum)
+        let percentageRandomNumber = Int.random(in: 1...sum)
         
         
         let sortedPipi = pipi.sorted{ $1.1 > $0.1 }
         
         
-        if umut <= sortedPipi[0].value {
+        if percentageRandomNumber <= sortedPipi[0].value {
             
             alp = sortedPipi[0].key
-        } else if umut <= sortedPipi[1].value {
+        } else if percentageRandomNumber <= sortedPipi[1].value {
             
             alp = sortedPipi[1].key
         } else {
@@ -471,9 +479,5 @@ class MainViewController: UIViewController {
         print("Last Version:", lastVersion)
         return lastVersion
     }
-    
-    
-    
-    
     
 }
