@@ -155,18 +155,21 @@ class MainViewController: UIViewController {
     
     
     @IBAction func nextButton(_ sender: UIButton) {
-        
-        
         //Eğer hepsi tutuyorsa bu button "başarılı" aktif
         //Eğer 3 roll hakkında başarısız olursa  bu button "başarısız" aktif
-        
-        
+       
+        if controlResult() == false {
+            pyhsicalTotal -= 10
+        }
+        //viewDidLoad()
+        print(controlResult())
+        print(pyhsicalTotal)
     }
     
     
     
     @IBAction func backToMain(_ sender: UIButton) {
-        
+
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -202,38 +205,29 @@ class MainViewController: UIViewController {
        //Bütün butonların hangi şartlarda çağırılacağı
         
         
-        //Buttonlar gelen değerlerin ve istenilen değerlerin sortlama işlemi
-        var sortedArray = storyInt.sorted(by: >)
-        var sortedButtonArray = arrayss.sorted(by: >)
-       //Buttonlar gelen değerlerin ve istenilen değerlerin sortlama işlemi
-
-       
         
-        //Kullanıcının button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
-        func control() -> Bool {
-            if sortedArray == sortedButtonArray {
-                return true
-            } else {
-                return false
-            }
-            
-        }
-        //Kullanıcının button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
         
         
         
         //Next Button'un ne zaman açılacağını karar veriyor.
-        let controlMeka = control()
+        let controlMeka = controlResult()
         
         //Next Button Control
         let controlNext = controlMeka
         
         if controlNext == true || rollCount == 4 {
             nextButtonOutlet.isHidden = false
+            if controlNext == false {
+                nextButtonOutlet.setTitle("Pdamage", for: .normal)
+            } else if controlNext == true {
+                nextButtonOutlet.setTitle("Adamsın!", for: .normal)
+            }
         } else {
             nextButtonOutlet.isHidden = true
         }
        //Next Button'un ne zaman açılacağını karar veriyor.
+        
+        
         
  // counterLogs()
     }
@@ -266,6 +260,23 @@ class MainViewController: UIViewController {
 //    }
     
     // Atılan zarların değerleri biz bakabilelim diye yazdığımız kısım TEKRAR ACARSAN mainRollButton da CAĞIRMAYI UNUTMA!!!
+    
+    func controlResult () -> Bool  {
+        //Buttonlar gelen değerlerin ve istenilen değerlerin sortlama işlemi
+         let sortedArray = storyInt.sorted(by: >)
+         let sortedButtonArray = arrayss.sorted(by: >)
+        //Buttonlar gelen değerlerin ve istenilen değerlerin sortlama işlemi
+
+         //Kullanıcının button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
+         
+             if sortedArray == sortedButtonArray {
+                 return true
+             } else {
+                 return false
+             }
+         
+         //Kullanıcının button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
+    }
     
     
     // Kullanıcının Attığı Zar Buttonlarının Fonksiyonlar Bloğu

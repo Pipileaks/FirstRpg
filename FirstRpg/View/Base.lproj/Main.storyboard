@@ -322,7 +322,6 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAb-CJ-hjp" userLabel="nextButton">
                                 <rect key="frame" x="243" y="552" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextButton:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="ek2-iT-cIH"/>
                                 </connections>
