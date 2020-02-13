@@ -29,6 +29,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var rollButtonOutlet: UIButton!
     @IBOutlet weak var storyTextOutlet: UILabel!
     
+    
+    
     var storyBankDic : [String] =
        [ "Lanet olsun...",
        "Burada storyOne texti olcak",
@@ -216,7 +218,6 @@ class MainViewController: UIViewController {
         tButtonOutlet.isSelected = false
         frButtonOutlet.isSelected = false
         ffthButtonOutlet.isSelected = false
-        nextButtonOutlet.isSelected = false
     }
     
     
