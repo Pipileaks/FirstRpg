@@ -246,14 +246,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIH-19-z83" userLabel="buttonLeft">
-                                <rect key="frame" x="29" y="298" width="150" height="123"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <connections>
-                                    <action selector="buttonLeftAction:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="tW8-Yi-6JT"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skill Reference 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B74-HP-61i" userLabel="skillReferenceRight">
                                 <rect key="frame" x="195" y="298" width="150" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -265,9 +257,13 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XN-4U-fJK" userLabel="buttonRigt">
                                 <rect key="frame" x="195" y="298" width="150" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="BOYAAAA">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonRightAction:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="OGi-GL-XcZ"/>
+                                    <action selector="buttonRightActionCancel:" destination="Ytw-d1-ScT" eventType="touchDown" id="8ze-1T-FfV"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5y-3T-kiM">
@@ -285,6 +281,7 @@
                                 <state key="normal" title="1"/>
                                 <connections>
                                     <action selector="firstButtonAction:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="A2o-EX-x2h"/>
+                                    <action selector="firstButtonCancel:" destination="Ytw-d1-ScT" eventType="touchDown" id="wWE-Nr-NtI"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdK-dP-td2" userLabel="rollButtonTwo">
@@ -294,6 +291,7 @@
                                 <state key="normal" title="2"/>
                                 <connections>
                                     <action selector="secondButtonAction:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="2na-Pb-NhZ"/>
+                                    <action selector="secondButtonCancel:" destination="Ytw-d1-ScT" eventType="touchDown" id="XTb-40-38g"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-JF-107" userLabel="rollButtonThree">
@@ -303,6 +301,7 @@
                                 <state key="normal" title="3"/>
                                 <connections>
                                     <action selector="thirdButtonAction:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="mKV-NK-EJY"/>
+                                    <action selector="thirdButtonCancel:" destination="Ytw-d1-ScT" eventType="touchDown" id="83l-aw-EIs"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNc-rp-KIP" userLabel="rollButtonFour">
@@ -312,6 +311,7 @@
                                 <state key="normal" title="4"/>
                                 <connections>
                                     <action selector="fourthButtonAction:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="TeD-c9-grM"/>
+                                    <action selector="fourthButtonCancel:" destination="Ytw-d1-ScT" eventType="touchDown" id="Ps3-Sb-M7Z"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yB5-nA-Eb2" userLabel="rollButtonFive">
@@ -321,6 +321,7 @@
                                 <state key="normal" title="5"/>
                                 <connections>
                                     <action selector="fifthButtonAction:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="Ys0-sx-zaJ"/>
+                                    <action selector="fifthButtonCancel:" destination="Ytw-d1-ScT" eventType="touchDown" id="Kzg-Kv-dDA"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAb-CJ-hjp" userLabel="nextButton">
@@ -328,6 +329,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="nextButton:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="ek2-iT-cIH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIH-19-z83" userLabel="buttonLeft">
+                                <rect key="frame" x="29" y="298" width="150" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="BOYAAAA">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonLeftAction:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="tW8-Yi-6JT"/>
+                                    <action selector="buttonLeftActionCancel:" destination="Ytw-d1-ScT" eventType="touchDown" id="VXc-r9-Dl0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -340,8 +353,10 @@
                         <outlet property="fButtonOutlet" destination="dRG-NS-kf5" id="FLz-HB-Enp"/>
                         <outlet property="ffthButtonOutlet" destination="yB5-nA-Eb2" id="gO3-LV-Gwh"/>
                         <outlet property="frButtonOutlet" destination="uNc-rp-KIP" id="dG2-Nh-t4G"/>
+                        <outlet property="leftButtonOutlet" destination="OIH-19-z83" id="lLo-m2-nhu"/>
                         <outlet property="leftSideOutlet" destination="mXN-8Z-Qfu" id="7Z2-33-C85"/>
                         <outlet property="nextButtonOutlet" destination="hAb-CJ-hjp" id="YEm-VE-Zby"/>
+                        <outlet property="rightButtonOutlet" destination="2XN-4U-fJK" id="XEZ-Wb-iod"/>
                         <outlet property="rightSideOutlet" destination="B74-HP-61i" id="Xcm-wg-9Lv"/>
                         <outlet property="rollButtonOutlet" destination="T5y-3T-kiM" id="0Rd-SG-2Lg"/>
                         <outlet property="sButtonOutlet" destination="xdK-dP-td2" id="g6f-CS-vRE"/>

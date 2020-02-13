@@ -23,6 +23,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var frButtonOutlet: UIButton!
     @IBOutlet weak var ffthButtonOutlet: UIButton!
     @IBOutlet weak var nextButtonOutlet: UIButton!
+    @IBOutlet weak var leftButtonOutlet: UIButton!
+    @IBOutlet weak var rightButtonOutlet: UIButton!
+    
     
     @IBOutlet weak var leftSideOutlet: UILabel!
     @IBOutlet weak var rightSideOutlet: UILabel!
@@ -168,25 +171,33 @@ class MainViewController: UIViewController {
     }
     // Stat Buttonlarının Bloğu
     
+    @IBAction func buttonLeftActionCancel(_ sender: UIButton) {
+        leftButtonOutlet.isSelected = false
+        
+    }
     
     @IBAction func buttonLeftAction(_ sender: UIButton) {
         
-        if sender.isTouchInside == true {
-
+        if sender.isTouchInside == true && rightButtonOutlet.isSelected != true {
+            leftButtonOutlet.isSelected = true
             rollButtonOutlet.isHidden = false
             whichStorySelectionStatsBankDic = storySelectionStatsBankDic
+           
         }
         
+    }
+    @IBAction func buttonRightActionCancel(_ sender: UIButton) {
+        rightButtonOutlet.isSelected = false
     }
     
     @IBAction func buttonRightAction(_ sender: UIButton) {
         
         
-        if sender.isTouchInside == true {
-            //TODO: @Umut mainroll butonu burada görünür yap. outletyazdım cıkmadı yapamadım
-            //yoksa kod patlıo out of range hatası alıyor.
+        if sender.isTouchInside == true && leftButtonOutlet.isSelected != true {
+           rightButtonOutlet.isSelected = true
             rollButtonOutlet.isHidden = false
             whichStorySelectionStatsBankDic = storySelectionStatsBankDic2
+            
         }
     }
     
@@ -220,7 +231,16 @@ class MainViewController: UIViewController {
         ffthButtonOutlet.isSelected = false
     }
     
+      // sol ve sağ selectionları aktif ya da inaktif yapabilsin
     
+    
+    
+    /// next dedikten sonra dice lar gözükmesin
+    //fiziksel ve mental değerleri ekranda düşssün
+    // game over ekranı ve kazandın ekranı - tek bir tane ekran üzerinden
+    // restart
+    //storyint 2 yi de kontrol etmesin sağla
+    //zarların tekrar inaktif olmasını sağla.
     
     @IBAction func backToMain(_ sender: UIButton) {
 
