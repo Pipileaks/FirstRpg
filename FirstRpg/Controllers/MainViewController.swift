@@ -211,6 +211,12 @@ class MainViewController: UIViewController {
         rollButtonOutlet.isHidden = true
         rollButtonOutlet.setTitle("Roll", for: .normal)
         rollCount = 0
+        fButtonOutlet.isSelected = false
+        sButtonOutlet.isSelected = false
+        tButtonOutlet.isSelected = false
+        frButtonOutlet.isSelected = false
+        ffthButtonOutlet.isSelected = false
+        nextButtonOutlet.isSelected = false
     }
     
     
