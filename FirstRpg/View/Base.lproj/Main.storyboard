@@ -250,7 +250,6 @@
                                 <rect key="frame" x="29" y="298" width="150" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="buttonLeftAction:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="tW8-Yi-6JT"/>
                                 </connections>
@@ -267,12 +266,11 @@
                                 <rect key="frame" x="195" y="298" width="150" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="buttonRightAction:" destination="Ytw-d1-ScT" eventType="touchUpInside" id="OGi-GL-XcZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5y-3T-kiM">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5y-3T-kiM">
                                 <rect key="frame" x="162" y="429" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ROLL 3"/>
@@ -342,8 +340,12 @@
                         <outlet property="fButtonOutlet" destination="dRG-NS-kf5" id="FLz-HB-Enp"/>
                         <outlet property="ffthButtonOutlet" destination="yB5-nA-Eb2" id="gO3-LV-Gwh"/>
                         <outlet property="frButtonOutlet" destination="uNc-rp-KIP" id="dG2-Nh-t4G"/>
+                        <outlet property="leftSideOutlet" destination="mXN-8Z-Qfu" id="7Z2-33-C85"/>
                         <outlet property="nextButtonOutlet" destination="hAb-CJ-hjp" id="YEm-VE-Zby"/>
+                        <outlet property="rightSideOutlet" destination="B74-HP-61i" id="Xcm-wg-9Lv"/>
+                        <outlet property="rollButtonOutlet" destination="T5y-3T-kiM" id="0Rd-SG-2Lg"/>
                         <outlet property="sButtonOutlet" destination="xdK-dP-td2" id="g6f-CS-vRE"/>
+                        <outlet property="storyTextOutlet" destination="RqE-HX-Ptg" id="zWd-lI-Ssj"/>
                         <outlet property="tButtonOutlet" destination="ObT-JF-107" id="Vsk-ux-WqF"/>
                     </connections>
                 </viewController>

@@ -24,33 +24,39 @@ class MainViewController: UIViewController {
     @IBOutlet weak var ffthButtonOutlet: UIButton!
     @IBOutlet weak var nextButtonOutlet: UIButton!
     
+    @IBOutlet weak var leftSideOutlet: UILabel!
+    @IBOutlet weak var rightSideOutlet: UILabel!
+    @IBOutlet weak var rollButtonOutlet: UIButton!
+    @IBOutlet weak var storyTextOutlet: UILabel!
     
+    var storyBankDic : [String] =
+       [ "Lanet olsun...",
+       "Burada storyOne texti olcak",
+       "Burada storyTwo texti olcak",
+       "Burada storyThree texti olcak",
+       "Burada storyFour texti olcak",
+       "Burada storyFive texti olcak"]
+   
+   
+   var storySelectionLeftBankDic : [String] =
+       [
+           "Arkadaşının arabası...",
+           "Sol1",
+           "Sol2",
+           "Sol3",
+           "Sol4",
+           "Sol5",
+   ]
+   var storySelectionRightBankDic : [String] =
+       [
+           "Otobüs soforu",
+           "Sağ1",
+           "Sağ2",
+           "Sağ3",
+           "Sağ4",
+           "Sağ5"
+   ]
     
-    
-    var storyBankDic : [String : String] =
-        ["prologue" : "Lanet olsun...",
-         "storyOne" : "Burada storyOne texti olcak",
-         "storyTwo" : "Burada storyTwo texti olcak",
-         "storyThree" : "Burada storyThree texti olcak",
-         "storyFour" : "Burada storyFour texti olcak",
-         "storyFive" : "Burada storyFive texti olcak"]
-    
-    
-    var storySelectionBankDic : [String : String] =
-        [
-            "epilogueLeft"      : "Arkadaşının arabası...",
-            "epilogueRight"     : "Otobüs soforu",
-            "storyOneLeft"      : "Burada storyOneLeft texti olcak",
-            "storyOneRight"     : "Burada storyOneRight texti olcak",
-            "storyTwoLeft"      : "Burada storyTwoLeft texti olcak",
-            "storyTwoRight"     : "Burada storyTwoRight texti olcak",
-            "storyThreeLeft"    : "Burada storyThreeLeft texti olcak",
-            "storyThreeRight"   : "Burada storyThreeRight texti olcak",
-            "storyFourLeft"     : "Burada storyFourLeft texti olcak",
-            "storyFourRight"    : "Burada storyFourRight texti olcak",
-            "storyFiveLeft"     : "Burada storyFiveLeft texti olcak",
-            "storyFiveRight"    : "Burada storyFiveRight texti olcak"
-    ]
     
     var pyhsicalTotal = 100
     var mentalTotal = 100
@@ -62,14 +68,14 @@ class MainViewController: UIViewController {
 
     // İstediğimiz değerlerin yazıldığı arrayler bloğu
     // @Umut isimler mental ve fiziksel dictionary olarak değişse nasıl olur?
-    var storyInt = [["str", "str", "dex", "dex", "wis", "z"],["con", "int", "int", "int", "cha", "z"]]
-    var storyInt2 = [["con", "int", "int", "int", "cha", "z"],["str", "str", "dex", "dex", "wis", "z"]]
+    var storyInt = [["str", "str", "dex", "dex", "wis", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"]]
+     var storyInt2 = [["con", "int", "int", "int", "cha", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"]]
     // İstediğimiz değerlerin yazıldığı arrayler bloğu
     
     // Hangi değerden kaç tane istediğimizin yazıldığı blok
     // @Umut isimler mental ve fiziksel dictionary olarak değişse nasıl olur?
-    var storySelectionStatsBankDic = [["str" : 2, "dex" : 2, "wis" : 1],["cha" : 1, "wis" : 3, "int" : 1]]
-    var storySelectionStatsBankDic2 = [["con" : 1, "int" : 3, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1]]
+    var storySelectionStatsBankDic = [["str" : 2, "dex" : 2, "wis" : 1],["cha" : 1, "wis" : 3, "int" : 1],["cha" : 1, "wis" : 3, "int" : 1],["cha" : 1, "wis" : 3, "int" : 1],["cha" : 1, "wis" : 3, "int" : 1],["cha" : 1, "wis" : 3, "int" : 1],["cha" : 1, "wis" : 3, "int" : 1],["cha" : 1, "wis" : 3, "int" : 1],["cha" : 1, "wis" : 3, "int" : 1]]
+    var storySelectionStatsBankDic2 = [["con" : 1, "int" : 3, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1]]
     // Hangi değerden kaç tane istediğimizin yazıldığı blok
     
     var rollCount = 0 // Kac defa rollendiğini sayar
@@ -164,9 +170,8 @@ class MainViewController: UIViewController {
     @IBAction func buttonLeftAction(_ sender: UIButton) {
         
         if sender.isTouchInside == true {
-            
-            //TODO: @Umut mainroll butonu burada görünür yap. outletyazdım cıkmadı yapamadım
-            //yoksa kod patlıo out of range hatası alıyor.
+
+            rollButtonOutlet.isHidden = false
             whichStorySelectionStatsBankDic = storySelectionStatsBankDic
         }
         
@@ -178,6 +183,7 @@ class MainViewController: UIViewController {
         if sender.isTouchInside == true {
             //TODO: @Umut mainroll butonu burada görünür yap. outletyazdım cıkmadı yapamadım
             //yoksa kod patlıo out of range hatası alıyor.
+            rollButtonOutlet.isHidden = false
             whichStorySelectionStatsBankDic = storySelectionStatsBankDic2
         }
     }
@@ -193,13 +199,18 @@ class MainViewController: UIViewController {
         } else if controlResult() == false && whichStorySelectionStatsBankDic == storySelectionStatsBankDic2 {
             mentalTotal -= 10
         }
-//        storyCounter += 1
+        storyCounter += 1
 //TODO: @Atakan işe yaramıyorsa yukarıdan da buradan da kaldır        leftCounter += 1
 //TODO: @Atakan işe yaramıyorsa yukarıdan da buradan da kaldır        rightCounter += 1
         print(pyhsicalTotal)
         print(mentalTotal)
         print(controlResult())
-        
+        leftSideOutlet.text = storySelectionLeftBankDic[storyCounter]
+        rightSideOutlet.text = storySelectionRightBankDic[storyCounter]
+        storyTextOutlet.text = storyBankDic[storyCounter]
+        rollButtonOutlet.isHidden = true
+        rollButtonOutlet.setTitle("Roll", for: .normal)
+        rollCount = 0
     }
     
     
@@ -222,7 +233,7 @@ class MainViewController: UIViewController {
         //Kaç defa basıldı
         rollCount += 1
         if rollCount == 4 {
-            sender.isUserInteractionEnabled = false
+            sender.isHidden = true
             sender.setTitle("Hakkın Bitti", for: .normal)
         }
         //Kaç defa basıldı
