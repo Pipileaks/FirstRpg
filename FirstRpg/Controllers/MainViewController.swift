@@ -54,12 +54,23 @@ class MainViewController: UIViewController {
     
     var pyhsicalTotal = 100
     var mentalTotal = 100
-    var storySelectionStatsBankDic : [String : Int] = ["str" : 2, "dex" : 2, "wis" : 1]
-    var storySelectionStatsBankDic2 : [String : Int] = ["con" : 1, "int" : 3, "cha" : 1]
+    var leftCounter = 0 // İhtiyac olursa diye koyuldu daha sonra kaldırılabilir
+    var rightCounter = 0 // İhtiyac olursa diye koyuldu daha sonra kaldırılabilir
+    var storyCounter = 0 // Hikayede nerede olduğumuz belirleyecek değişken
+    var whichStorySelectionStatsBankDic: [[String:Int]] = []
+
+
     // İstediğimiz değerlerin yazıldığı arrayler bloğu
-    var storyInt = ["str", "str", "dex", "dex", "wis", "z"]
-    var storyInt2 = ["con", "int", "int", "int", "cha", "z"]
+    // @Umut isimler mental ve fiziksel dictionary olarak değişse nasıl olur?
+    var storyInt = [["str", "str", "dex", "dex", "wis", "z"],["con", "int", "int", "int", "cha", "z"]]
+    var storyInt2 = [["con", "int", "int", "int", "cha", "z"],["str", "str", "dex", "dex", "wis", "z"]]
     // İstediğimiz değerlerin yazıldığı arrayler bloğu
+    
+    // Hangi değerden kaç tane istediğimizin yazıldığı blok
+    // @Umut isimler mental ve fiziksel dictionary olarak değişse nasıl olur?
+    var storySelectionStatsBankDic = [["str" : 2, "dex" : 2, "wis" : 1],["cha" : 1, "wis" : 3, "int" : 1]]
+    var storySelectionStatsBankDic2 = [["con" : 1, "int" : 3, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1]]
+    // Hangi değerden kaç tane istediğimizin yazıldığı blok
     
     var rollCount = 0 // Kac defa rollendiğini sayar
     var arrayss = ["z"] // Kullanıcının attığı değerlerin yazıldığı array
@@ -79,7 +90,7 @@ class MainViewController: UIViewController {
     var frcounter = true
     var ffthcounter = true
     // Her tuş için ayrı ayrı appendleme işlemini kontrol etmeye yarayan counterlar bloğu
-    var storyCounter = 0 // Hikayede nerede olduğumuz belirleyecek değişken
+    
     
     
     override func viewDidLoad() {
@@ -150,7 +161,26 @@ class MainViewController: UIViewController {
     // Stat Buttonlarının Bloğu
     
     
+    @IBAction func buttonLeftAction(_ sender: UIButton) {
+        
+        if sender.isTouchInside == true {
+            
+            //TODO: @Umut mainroll butonu burada görünür yap. outletyazdım cıkmadı yapamadım
+            //yoksa kod patlıo out of range hatası alıyor.
+            whichStorySelectionStatsBankDic = storySelectionStatsBankDic
+        }
+        
+    }
     
+    @IBAction func buttonRightAction(_ sender: UIButton) {
+        
+        
+        if sender.isTouchInside == true {
+            //TODO: @Umut mainroll butonu burada görünür yap. outletyazdım cıkmadı yapamadım
+            //yoksa kod patlıo out of range hatası alıyor.
+            whichStorySelectionStatsBankDic = storySelectionStatsBankDic2
+        }
+    }
     
     
     
@@ -158,12 +188,18 @@ class MainViewController: UIViewController {
         //Eğer hepsi tutuyorsa bu button "başarılı" aktif
         //Eğer 3 roll hakkında başarısız olursa  bu button "başarısız" aktif
        
-        if controlResult() == false {
+        if controlResult() == false && whichStorySelectionStatsBankDic == storySelectionStatsBankDic {
             pyhsicalTotal -= 10
+        } else if controlResult() == false && whichStorySelectionStatsBankDic == storySelectionStatsBankDic2 {
+            mentalTotal -= 10
         }
-        //viewDidLoad()
-        print(controlResult())
+//        storyCounter += 1
+//TODO: @Atakan işe yaramıyorsa yukarıdan da buradan da kaldır        leftCounter += 1
+//TODO: @Atakan işe yaramıyorsa yukarıdan da buradan da kaldır        rightCounter += 1
         print(pyhsicalTotal)
+        print(mentalTotal)
+        print(controlResult())
+        
     }
     
     
@@ -217,8 +253,10 @@ class MainViewController: UIViewController {
         
         if controlNext == true || rollCount == 4 {
             nextButtonOutlet.isHidden = false
-            if controlNext == false {
+            if controlNext == false && whichStorySelectionStatsBankDic == storySelectionStatsBankDic {
                 nextButtonOutlet.setTitle("Pdamage", for: .normal)
+            } else if controlNext == false && whichStorySelectionStatsBankDic == storySelectionStatsBankDic2 {
+            nextButtonOutlet.setTitle("Mdamage", for: .normal)
             } else if controlNext == true {
                 nextButtonOutlet.setTitle("Adamsın!", for: .normal)
             }
@@ -263,7 +301,7 @@ class MainViewController: UIViewController {
     
     func controlResult () -> Bool  {
         //Buttonlar gelen değerlerin ve istenilen değerlerin sortlama işlemi
-         let sortedArray = storyInt.sorted(by: >)
+         let sortedArray = storyInt[storyCounter].sorted(by: >)
          let sortedButtonArray = arrayss.sorted(by: >)
         //Buttonlar gelen değerlerin ve istenilen değerlerin sortlama işlemi
 
@@ -446,7 +484,7 @@ class MainViewController: UIViewController {
             
             
             var found = false
-            for (i, value) in  storySelectionStatsBankDic {
+            for (i, value) in  whichStorySelectionStatsBankDic[storyCounter] {
                 if key == i {
                     found = true
                     
@@ -468,6 +506,9 @@ class MainViewController: UIViewController {
             }
             
         }
+        
+        print(whichStorySelectionStatsBankDic[storyCounter])
+        
         let percentageRandomNumber = Int.random(in: 1...sum)
         
         

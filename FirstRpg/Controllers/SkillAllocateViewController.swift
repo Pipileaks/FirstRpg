@@ -25,7 +25,7 @@ class SkillAllocateViewController: UIViewController {
     var int_current_value = 0
     var cha_current_value = 0
     var wis_current_value = 0
-    var lck_current_value = 0
+    var con_current_value = 0
     
     
     var total_current = 0
@@ -36,7 +36,7 @@ class SkillAllocateViewController: UIViewController {
     var int_maximum_value : Double = 0.0
     var cha_maximum_value : Double = 0.0
     var wis_maximum_value : Double = 0.0
-    var lck_maximum_value : Double = 0.0
+    var con_maximum_value : Double = 0.0
     
     
     //Continue Button Here
@@ -55,7 +55,7 @@ class SkillAllocateViewController: UIViewController {
                         
              destinationVC.characterAllocatedStr = str_current_value
              destinationVC.characterAllocatedDex = dex_current_value
-             destinationVC.characterAllocatedCon = lck_current_value
+             destinationVC.characterAllocatedCon = con_current_value
              destinationVC.characterAllocatedWis = wis_current_value
              destinationVC.characterAllocatedInt = int_current_value
              destinationVC.characterAllocatedCha = cha_current_value
@@ -87,7 +87,7 @@ class SkillAllocateViewController: UIViewController {
     
     func totalPool() -> Bool {
         
-        let currentTotalPoints = str_current_value + dex_current_value + int_current_value + cha_current_value + wis_current_value + lck_current_value
+        let currentTotalPoints = str_current_value + dex_current_value + int_current_value + cha_current_value + wis_current_value + con_current_value
         total_current = currentTotalPoints
         
         if currentTotalPoints < Int(absoluteTotalPoints) {
@@ -105,7 +105,7 @@ class SkillAllocateViewController: UIViewController {
         
         
         
-        let currentTotalPoints = str_current_value + dex_current_value + int_current_value + cha_current_value + wis_current_value + lck_current_value
+        let currentTotalPoints = str_current_value + dex_current_value + int_current_value + cha_current_value + wis_current_value + con_current_value
         
          
         
@@ -221,9 +221,9 @@ class SkillAllocateViewController: UIViewController {
     
     @IBAction func lck_value_changer(_ sender: UIStepper) {
         
-        lck_current_value = Int(sender.value) //client 's input is stored in str_current_value
-        LCK_UILabel.text = String(lck_current_value) //current value of  the label
-        lck_maximum_value = sender.maximumValue //label's maximum value could be this
+        con_current_value = Int(sender.value) //client 's input is stored in str_current_value
+        LCK_UILabel.text = String(con_current_value) //current value of  the label
+        con_maximum_value = sender.maximumValue //label's maximum value could be this
         //toplam havuz daha fazla puan atamama izin vericek mi??
         
         
@@ -244,7 +244,7 @@ class SkillAllocateViewController: UIViewController {
         print("int_current_value: ", int_current_value)
         print("cha_current_value: ", cha_current_value)
         print("wis_current_value: ", wis_current_value)
-        print("lck_current_value: ", lck_current_value)
+        print("con_current_value: ", con_current_value)
         
     }
     
