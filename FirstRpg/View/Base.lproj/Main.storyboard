@@ -355,7 +355,9 @@
                         <outlet property="frButtonOutlet" destination="uNc-rp-KIP" id="dG2-Nh-t4G"/>
                         <outlet property="leftButtonOutlet" destination="OIH-19-z83" id="lLo-m2-nhu"/>
                         <outlet property="leftSideOutlet" destination="mXN-8Z-Qfu" id="7Z2-33-C85"/>
+                        <outlet property="mentalDamageCounter" destination="DTQ-10-OHh" id="UT7-WC-8IG"/>
                         <outlet property="nextButtonOutlet" destination="hAb-CJ-hjp" id="YEm-VE-Zby"/>
+                        <outlet property="physicalDamageCounter" destination="mqW-We-m5a" id="n3Y-GU-MgY"/>
                         <outlet property="rightButtonOutlet" destination="2XN-4U-fJK" id="XEZ-Wb-iod"/>
                         <outlet property="rightSideOutlet" destination="B74-HP-61i" id="Xcm-wg-9Lv"/>
                         <outlet property="rollButtonOutlet" destination="T5y-3T-kiM" id="0Rd-SG-2Lg"/>

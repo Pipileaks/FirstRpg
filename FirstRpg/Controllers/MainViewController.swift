@@ -26,6 +26,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var leftButtonOutlet: UIButton!
     @IBOutlet weak var rightButtonOutlet: UIButton!
     
+    @IBOutlet weak var physicalDamageCounter: UILabel!
+    @IBOutlet weak var mentalDamageCounter: UILabel!
     
     @IBOutlet weak var leftSideOutlet: UILabel!
     @IBOutlet weak var rightSideOutlet: UILabel!
@@ -69,6 +71,7 @@ class MainViewController: UIViewController {
     var rightCounter = 0 // İhtiyac olursa diye koyuldu daha sonra kaldırılabilir
     var storyCounter = 0 // Hikayede nerede olduğumuz belirleyecek değişken
     var whichStorySelectionStatsBankDic: [[String:Int]] = []
+    var whichStory : [[String]] = []
 
 
     // İstediğimiz değerlerin yazıldığı arrayler bloğu
@@ -173,7 +176,8 @@ class MainViewController: UIViewController {
     
     @IBAction func buttonLeftActionCancel(_ sender: UIButton) {
         leftButtonOutlet.isSelected = false
-        
+        rollButtonOutlet.isHidden = true
+        whichStorySelectionStatsBankDic = []
     }
     
     @IBAction func buttonLeftAction(_ sender: UIButton) {
@@ -188,6 +192,8 @@ class MainViewController: UIViewController {
     }
     @IBAction func buttonRightActionCancel(_ sender: UIButton) {
         rightButtonOutlet.isSelected = false
+        rollButtonOutlet.isHidden = true
+        whichStorySelectionStatsBankDic = []
     }
     
     @IBAction func buttonRightAction(_ sender: UIButton) {
@@ -209,8 +215,10 @@ class MainViewController: UIViewController {
        
         if controlResult() == false && whichStorySelectionStatsBankDic == storySelectionStatsBankDic {
             pyhsicalTotal -= 10
+            physicalDamageCounter.text = String(pyhsicalTotal)
         } else if controlResult() == false && whichStorySelectionStatsBankDic == storySelectionStatsBankDic2 {
             mentalTotal -= 10
+            mentalDamageCounter.text = String(mentalTotal)
         }
         storyCounter += 1
 //TODO: @Atakan işe yaramıyorsa yukarıdan da buradan da kaldır        leftCounter += 1
@@ -221,6 +229,7 @@ class MainViewController: UIViewController {
         leftSideOutlet.text = storySelectionLeftBankDic[storyCounter]
         rightSideOutlet.text = storySelectionRightBankDic[storyCounter]
         storyTextOutlet.text = storyBankDic[storyCounter]
+        rollButtonOutlet.isUserInteractionEnabled = true
         rollButtonOutlet.isHidden = true
         rollButtonOutlet.setTitle("Roll", for: .normal)
         rollCount = 0
@@ -229,18 +238,30 @@ class MainViewController: UIViewController {
         tButtonOutlet.isSelected = false
         frButtonOutlet.isSelected = false
         ffthButtonOutlet.isSelected = false
+        fButtonOutlet.isHidden = true
+        sButtonOutlet.isHidden = true
+        tButtonOutlet.isHidden = true
+        frButtonOutlet.isHidden = true
+        ffthButtonOutlet.isHidden = true
+        leftButtonOutlet.isHidden = false
+        rightButtonOutlet.isHidden = false
+        leftButtonOutlet.isSelected = false
+        rightButtonOutlet.isSelected = false
+        nextButtonOutlet.setTitle("", for: .normal)
+        arrayss = ["z"]
+        
     }
     
-      // sol ve sağ selectionları aktif ya da inaktif yapabilsin
     
     
     
-    /// next dedikten sonra dice lar gözükmesin
-    //fiziksel ve mental değerleri ekranda düşssün
+    
+    
+    
     // game over ekranı ve kazandın ekranı - tek bir tane ekran üzerinden
     // restart
-    //storyint 2 yi de kontrol etmesin sağla
-    //zarların tekrar inaktif olmasını sağla.
+    
+    
     
     @IBAction func backToMain(_ sender: UIButton) {
 
@@ -256,25 +277,35 @@ class MainViewController: UIViewController {
         tButtonOutlet.isHidden = false
         frButtonOutlet.isHidden = false
         ffthButtonOutlet.isHidden = false
+        leftButtonOutlet.isHidden = true
+        rightButtonOutlet.isHidden = true
+        button1()
+        button2()
+        button3()
+        button4()
+        button5()
         
         //Kaç defa basıldı
         rollCount += 1
+        sender.setTitle(String(3 - rollCount), for: .normal)
+        if rollCount == 3 {
+            sender.setTitle("checkout", for: .normal)
+        }
         if rollCount == 4 {
-            sender.isHidden = true
+            sender.isUserInteractionEnabled = false
             sender.setTitle("Hakkın Bitti", for: .normal)
         }
         //Kaç defa basıldı
         
         
         //Bütün butonların hangi şartlarda çağırılacağı
-        if rollCount != 4 || (rollCount == 4 && controlMeka == false) {
-                 button1()
-                 button2()
-                 button3()
-                 button4()
-                 button5()
+       
                  
-             }
+       
+        //else if rollCount == 4 &&  {
+            
+        //}
+        
         
        //Bütün butonların hangi şartlarda çağırılacağı
         
@@ -289,17 +320,25 @@ class MainViewController: UIViewController {
         //Next Button Control
         let controlNext = controlMeka
         
-        if controlNext == true || rollCount == 4 {
+        if controlNext == true{
             nextButtonOutlet.isHidden = false
-            if controlNext == false && whichStorySelectionStatsBankDic == storySelectionStatsBankDic {
+            nextButtonOutlet.setTitle("Adamsın!", for: .normal)
+            sender.isHidden = true
+        }
+        else if rollCount == 4 && controlNext == false
+        {
+            nextButtonOutlet.isHidden = false
+            if  whichStorySelectionStatsBankDic == storySelectionStatsBankDic
+            {
                 nextButtonOutlet.setTitle("Pdamage", for: .normal)
-            } else if controlNext == false && whichStorySelectionStatsBankDic == storySelectionStatsBankDic2 {
-            nextButtonOutlet.setTitle("Mdamage", for: .normal)
-            } else if controlNext == true {
-                nextButtonOutlet.setTitle("Adamsın!", for: .normal)
             }
-        } else {
-            nextButtonOutlet.isHidden = true
+            else if whichStorySelectionStatsBankDic == storySelectionStatsBankDic2 {
+                nextButtonOutlet.setTitle("Mdamage", for: .normal)
+            }
+        }
+        else
+        {
+        nextButtonOutlet.isHidden = true
         }
        //Next Button'un ne zaman açılacağını karar veriyor.
         
@@ -339,18 +378,28 @@ class MainViewController: UIViewController {
     
     func controlResult () -> Bool  {
         //Buttonlar gelen değerlerin ve istenilen değerlerin sortlama işlemi
-         let sortedArray = storyInt[storyCounter].sorted(by: >)
+        var sortedArray : [String] = []
+        //if leftButtonOutlet.isSelected
+        if leftButtonOutlet.isSelected {
+          sortedArray = storyInt[storyCounter].sorted(by: >)
+        } else if rightButtonOutlet.isSelected {
+          sortedArray = storyInt2[storyCounter].sorted(by: >)
+        }
+          
+          
          let sortedButtonArray = arrayss.sorted(by: >)
         //Buttonlar gelen değerlerin ve istenilen değerlerin sortlama işlemi
 
          //Kullanıcının button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
-         
+         print("sortedArray",sortedArray)
+         print("sortedButtonArray", sortedButtonArray)
+         print("arrays",arrayss)
              if sortedArray == sortedButtonArray {
                  return true
              } else {
                  return false
              }
-         
+        
          //Kullanıcının button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
     }
     
@@ -360,12 +409,12 @@ class MainViewController: UIViewController {
     func button1 () {
         diceRoller()
         
-        if fButtonOutlet.isSelected == false {
+        if fButtonOutlet.isSelected == false && rollCount != 3 {
             
             fB = diceRoller()
             fButtonOutlet.setImage(UIImage(named: fB + ".png"), for: .normal)
             fcounter = true
-        } else if fButtonOutlet.isSelected == true && fcounter == true {
+        } else if fButtonOutlet.isSelected == true && fcounter == true  {
             fcounter = false
             
             arrayss.append(fB)
@@ -376,14 +425,14 @@ class MainViewController: UIViewController {
             fButtonOutlet.setImage(UIImage(named: fB + ".png"), for: .normal)
             
         }
-        
+        print(rollCount)
     }
     
     
     func button2 () {
         diceRoller()
         
-        if sButtonOutlet.isSelected == false {
+        if sButtonOutlet.isSelected == false && rollCount != 3 {
             
             sB = diceRoller()
             sButtonOutlet.setImage(UIImage(named: sB + ".png"), for: .normal)
@@ -405,12 +454,12 @@ class MainViewController: UIViewController {
     func button3 () {
         diceRoller()
         
-        if tButtonOutlet.isSelected == false {
+        if tButtonOutlet.isSelected == false && rollCount != 3 {
             
             tB = diceRoller()
             tButtonOutlet.setImage(UIImage(named: tB + ".png"), for: .normal)
             tcounter = true
-        } else if tButtonOutlet.isSelected == true && tcounter == true {
+        } else if tButtonOutlet.isSelected == true && tcounter == true  {
             tcounter = false
             
             arrayss.append(tB)
@@ -427,12 +476,12 @@ class MainViewController: UIViewController {
     func button4 () {
         diceRoller()
         
-        if frButtonOutlet.isSelected == false {
+        if frButtonOutlet.isSelected == false && rollCount != 3 {
             
             frB = diceRoller()
             frButtonOutlet.setImage(UIImage(named: frB + ".png"), for: .normal)
             frcounter = true
-        } else if frButtonOutlet.isSelected == true && frcounter == true {
+        } else if frButtonOutlet.isSelected == true && frcounter == true  {
             frcounter = false
             
             arrayss.append(frB)
@@ -449,12 +498,12 @@ class MainViewController: UIViewController {
     func button5 () {
         diceRoller()
         
-        if ffthButtonOutlet.isSelected == false {
+        if ffthButtonOutlet.isSelected == false && rollCount != 3 {
             
             ffthB = diceRoller()
             ffthButtonOutlet.setImage(UIImage(named: ffthB + ".png"), for: .normal)
             ffthcounter = true
-        } else if ffthButtonOutlet.isSelected == true && ffthcounter == true {
+        } else if ffthButtonOutlet.isSelected == true && ffthcounter == true  {
             ffthcounter = false
             
             arrayss.append(ffthB)
@@ -509,7 +558,6 @@ class MainViewController: UIViewController {
             "wis": characterAllocatedWis!*5+1,
             "int": characterAllocatedInt!*5+1,
             "cha": characterAllocatedCha!*5+1]
-        
         var pipi = [String: Int]()
         var sum = 0
         
