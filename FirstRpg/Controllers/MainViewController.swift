@@ -9,6 +9,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
+  
     
     var characterAllocatedStr: Int?
     var characterAllocatedDex: Int?

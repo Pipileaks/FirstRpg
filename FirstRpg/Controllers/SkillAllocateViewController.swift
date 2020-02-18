@@ -10,12 +10,13 @@ import UIKit
 
 class SkillAllocateViewController: UIViewController {
     
+  
     
     var dex_value_cal = 0, str_value_cal = 0, int_value_cal = 0, cha_value_cal = 0, wis_value_cal = 0, lck_value_cal = 0  //bunun degerini daha sonra hesaplamak icin kullanilacak.
     var dex_max_cal = 0, str_max_cal = 0, int_max_cal = 0, wis_max_cal = 0, cha_max_cal = 0, lck_max_cal = 0
     
     
-    let absoluteTotalPoints = 20  // total stat pool
+    let absoluteTotalPoints = 1  // total stat pool
     
     
     

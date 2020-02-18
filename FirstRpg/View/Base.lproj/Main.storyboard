@@ -188,9 +188,9 @@
         <!--Main View Controller-->
         <scene sceneID="tBa-WJ-q62">
             <objects>
-                <viewController id="Ytw-d1-ScT" customClass="MainViewController" customModule="FirstRpg" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Ytw-d1-ScT" customClass="MainViewController" customModule="FirstRpg" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ccX-rq-IiU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weq-H9-TVV">
@@ -348,8 +348,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="tZY-YY-GqX"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" id="bAg-7C-uBp"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="fButtonOutlet" destination="dRG-NS-kf5" id="FLz-HB-Enp"/>
                         <outlet property="ffthButtonOutlet" destination="yB5-nA-Eb2" id="gO3-LV-Gwh"/>
