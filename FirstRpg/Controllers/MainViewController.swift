@@ -37,32 +37,32 @@ class MainViewController: UIViewController {
     
     
     var storyBankDic : [String] =
-       [ "Lanet olsun...",
-       "Burada storyOne texti olcak",
-       "Burada storyTwo texti olcak",
-       "Burada storyThree texti olcak",
-       "Burada storyFour texti olcak",
-       "Burada storyFive texti olcak"]
-   
-   
-   var storySelectionLeftBankDic : [String] =
-       [
-           "Arkadaşının arabası...",
-           "Sol1",
-           "Sol2",
-           "Sol3",
-           "Sol4",
-           "Sol5",
-   ]
-   var storySelectionRightBankDic : [String] =
-       [
-           "Otobüs soforu",
-           "Sağ1",
-           "Sağ2",
-           "Sağ3",
-           "Sağ4",
-           "Sağ5"
-   ]
+        [ "Lanet olsun...",
+          "Burada storyOne texti olcak",
+          "Burada storyTwo texti olcak",
+          "Burada storyThree texti olcak",
+          "Burada storyFour texti olcak",
+          "Burada storyFive texti olcak"]
+    
+    
+    var storySelectionLeftBankDic : [String] =
+        [
+            "Arkadaşının arabası...",
+            "Sol1",
+            "Sol2",
+            "Sol3",
+            "Sol4",
+            "Sol5",
+    ]
+    var storySelectionRightBankDic : [String] =
+        [
+            "Otobüs soforu",
+            "Sağ1",
+            "Sağ2",
+            "Sağ3",
+            "Sağ4",
+            "Sağ5"
+    ]
     
     
     var pyhsicalTotal = 100
@@ -72,30 +72,30 @@ class MainViewController: UIViewController {
     var storyCounter = 0 // Hikayede nerede olduğumuz belirleyecek değişken
     var whichStorySelectionStatsBankDic: [[String:Int]] = []
     var whichStory : [[String]] = []
-
-
+    
+    
     // İstediğimiz değerlerin yazıldığı arrayler bloğu
     // @Umut isimler mental ve fiziksel dictionary olarak değişse nasıl olur?
-    var storyInt = [["str", "str", "str", "str", "str", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"]]
-     var storyInt2 = [["con", "int", "int", "int", "cha", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"]]
+    var storyInt = [["str", "dex", "wis", "dex", "str", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"]]
+    var storyInt2 = [["con", "int", "int", "int", "cha", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"]]
     // İstediğimiz değerlerin yazıldığı arrayler bloğu
     
     // Hangi değerden kaç tane istediğimizin yazıldığı blok
     // @Umut isimler mental ve fiziksel dictionary olarak değişse nasıl olur?
-    var storySelectionStatsBankDic = [["str" : 2, "dex" : 2, "wis" : 1],["cha" : 1, "wis" : 3, "int" : 1],["cha" : 1, "wis" : 3, "int" : 1],["cha" : 1, "wis" : 3, "int" : 1],["cha" : 1, "wis" : 3, "int" : 1],["cha" : 1, "wis" : 3, "int" : 1],["cha" : 1, "wis" : 3, "int" : 1],["cha" : 1, "wis" : 3, "int" : 1],["cha" : 1, "wis" : 3, "int" : 1]]
-    var storySelectionStatsBankDic2 = [["con" : 1, "int" : 3, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1],["str" : 2, "int" : 2, "cha" : 1]]
+    var storySelectionStatsBankDic = [["str" : 2, "dex" : 2, "wis" : 1],["cha" : 1, "int" : 3, "con" : 1],["cha" : 1, "int" : 3, "con" : 1],["cha" : 1, "int" : 3, "con" : 1],["cha" : 1, "int" : 3, "con" : 1],["cha" : 1, "int" : 3, "con" : 1],["cha" : 1, "int" : 3, "con" : 1],["cha" : 1, "int" : 3, "con" : 1],["cha" : 1, "int" : 3, "con" : 1]]
+    var storySelectionStatsBankDic2 = [["con" : 1, "int" : 3, "cha" : 1],["str" : 2, "dex" : 2, "wis" : 1],["str" : 2, "dex" : 2, "wis" : 1],["str" : 2, "dex" : 2, "wis" : 1],["str" : 2, "dex" : 2, "wis" : 1],["str" : 2, "dex" : 2, "wis" : 1],["str" : 2, "dex" : 2, "wis" : 1],["str" : 2, "dex" : 2, "wis" : 1]]
     // Hangi değerden kaç tane istediğimizin yazıldığı blok
     
     var rollCount = 0 // Kac defa rollendiğini sayar
     var arrayss = ["z"] // Kullanıcının attığı değerlerin yazıldığı array
     var controlMeka : Bool? // Kullanıcının seçtiği ve bizim istediğimiz değerleri kontrol etmeye yarar
-     // Imajın ismini almak için olusturduğumuz değişkenler bloğu
+    // Imajın ismini almak için olusturduğumuz değişkenler bloğu
     var fB = ""
     var sB = ""
     var tB = ""
     var frB = ""
     var ffthB = "" //
-     // Imajın ismini almak için olusturduğumuz değişkenler bloğu
+    // Imajın ismini almak için olusturduğumuz değişkenler bloğu
     var percentageRandomNumber = "" // Zarlara hangi statın geleceğini kontrol ettiğimiz rastgele sayı
     // Her tuş için ayrı ayrı appendleme işlemini kontrol etmeye yarayan counterlar bloğu
     var fcounter = true
@@ -177,6 +177,8 @@ class MainViewController: UIViewController {
     @IBAction func buttonLeftActionCancel(_ sender: UIButton) {
         leftButtonOutlet.isSelected = false
         rollButtonOutlet.isHidden = true
+        rightButtonOutlet.isUserInteractionEnabled = true
+        leftSideOutlet.backgroundColor = .orange
         whichStorySelectionStatsBankDic = []
     }
     
@@ -185,24 +187,33 @@ class MainViewController: UIViewController {
         if sender.isTouchInside == true && rightButtonOutlet.isSelected != true {
             leftButtonOutlet.isSelected = true
             rollButtonOutlet.isHidden = false
+            rightButtonOutlet.isUserInteractionEnabled = false
+            leftSideOutlet.backgroundColor = .white
             whichStorySelectionStatsBankDic = storySelectionStatsBankDic
-           
+            
         }
         
     }
     @IBAction func buttonRightActionCancel(_ sender: UIButton) {
         rightButtonOutlet.isSelected = false
         rollButtonOutlet.isHidden = true
+        leftButtonOutlet.isUserInteractionEnabled = true
+        rightSideOutlet.backgroundColor = .orange
         whichStorySelectionStatsBankDic = []
+        
     }
     
     @IBAction func buttonRightAction(_ sender: UIButton) {
         
         
         if sender.isTouchInside == true && leftButtonOutlet.isSelected != true {
-           rightButtonOutlet.isSelected = true
+            rightButtonOutlet.isSelected = true
             rollButtonOutlet.isHidden = false
+            leftButtonOutlet.isUserInteractionEnabled = false
+      
+                rightSideOutlet.backgroundColor = .white
             whichStorySelectionStatsBankDic = storySelectionStatsBankDic2
+            
             
         }
     }
@@ -212,7 +223,7 @@ class MainViewController: UIViewController {
     @IBAction func nextButton(_ sender: UIButton) {
         //Eğer hepsi tutuyorsa bu button "başarılı" aktif
         //Eğer 3 roll hakkında başarısız olursa  bu button "başarısız" aktif
-       
+        
         if controlResult() == false && whichStorySelectionStatsBankDic == storySelectionStatsBankDic {
             pyhsicalTotal -= 10
             physicalDamageCounter.text = String(pyhsicalTotal)
@@ -221,8 +232,8 @@ class MainViewController: UIViewController {
             mentalDamageCounter.text = String(mentalTotal)
         }
         storyCounter += 1
-//TODO: @Atakan işe yaramıyorsa yukarıdan da buradan da kaldır        leftCounter += 1
-//TODO: @Atakan işe yaramıyorsa yukarıdan da buradan da kaldır        rightCounter += 1
+        //TODO: @Atakan işe yaramıyorsa yukarıdan da buradan da kaldır        leftCounter += 1
+        //TODO: @Atakan işe yaramıyorsa yukarıdan da buradan da kaldır        rightCounter += 1
         print(pyhsicalTotal)
         print(mentalTotal)
         print(controlResult())
@@ -250,6 +261,12 @@ class MainViewController: UIViewController {
         nextButtonOutlet.setTitle("", for: .normal)
         arrayss = ["z"]
         
+        leftSideOutlet.backgroundColor = .orange
+        rightSideOutlet.backgroundColor = .orange
+        rightSideOutlet.isHidden = false
+        leftSideOutlet.isHidden = false
+        
+        
     }
     
     
@@ -264,14 +281,14 @@ class MainViewController: UIViewController {
     
     
     @IBAction func backToMain(_ sender: UIButton) {
-
+        
         self.dismiss(animated: true, completion: nil)
     }
     
     // Zarların atılmasını ve gerekli kontrollerin yapılmasını sağlayan roll butonu bloğu
     
     @IBAction func mainRollButton(_ sender: UIButton) {
-
+        
         fButtonOutlet.isHidden = false
         sButtonOutlet.isHidden = false
         tButtonOutlet.isHidden = false
@@ -284,6 +301,14 @@ class MainViewController: UIViewController {
         button3()
         button4()
         button5()
+        
+        if leftButtonOutlet.isSelected == true {
+            rightSideOutlet.isHidden = true
+        }
+        
+        if rightButtonOutlet.isSelected == true {
+            leftSideOutlet.isHidden = true
+        }
         
         //Kaç defa basıldı
         rollCount += 1
@@ -299,15 +324,15 @@ class MainViewController: UIViewController {
         
         
         //Bütün butonların hangi şartlarda çağırılacağı
-       
-                 
-       
+        
+        
+        
         //else if rollCount == 4 &&  {
-            
+        
         //}
         
         
-       //Bütün butonların hangi şartlarda çağırılacağı
+        //Bütün butonların hangi şartlarda çağırılacağı
         
         
         
@@ -338,41 +363,41 @@ class MainViewController: UIViewController {
         }
         else
         {
-        nextButtonOutlet.isHidden = true
+            nextButtonOutlet.isHidden = true
         }
-       //Next Button'un ne zaman açılacağını karar veriyor.
+        //Next Button'un ne zaman açılacağını karar veriyor.
         
         
         
- // counterLogs()
+        // counterLogs()
     }
     
     // Zarların atılmasını ve gerekli kontrollerin yapılmasını sağlayan roll butonu bloğu
     
     // Atılan zarların değerleri biz bakabilelim diye yazdığımız kısım
     
-//    func counterLogs() {
-//
-//        var strCounter = 0
-//        var wisCounter = 0
-//        var dexCounter = 0
-//
-//        for i in arrayss {
-//
-//            if i == "str" {
-//                strCounter += 1
-//            } else if i == "wis" {
-//                wisCounter += 1
-//            } else if i == "dex" {
-//                dexCounter += 1
-//            }
-//
-//        }
-//
-//
-//        print("Str:", strCounter, "Wis:", wisCounter, "Dex:", dexCounter)
-//
-//    }
+    //    func counterLogs() {
+    //
+    //        var strCounter = 0
+    //        var wisCounter = 0
+    //        var dexCounter = 0
+    //
+    //        for i in arrayss {
+    //
+    //            if i == "str" {
+    //                strCounter += 1
+    //            } else if i == "wis" {
+    //                wisCounter += 1
+    //            } else if i == "dex" {
+    //                dexCounter += 1
+    //            }
+    //
+    //        }
+    //
+    //
+    //        print("Str:", strCounter, "Wis:", wisCounter, "Dex:", dexCounter)
+    //
+    //    }
     
     // Atılan zarların değerleri biz bakabilelim diye yazdığımız kısım TEKRAR ACARSAN mainRollButton da CAĞIRMAYI UNUTMA!!!
     
@@ -381,26 +406,26 @@ class MainViewController: UIViewController {
         var sortedArray : [String] = []
         //if leftButtonOutlet.isSelected
         if leftButtonOutlet.isSelected {
-          sortedArray = storyInt[storyCounter].sorted(by: >)
+            sortedArray = storyInt[storyCounter].sorted(by: >)
         } else if rightButtonOutlet.isSelected {
-          sortedArray = storyInt2[storyCounter].sorted(by: >)
+            sortedArray = storyInt2[storyCounter].sorted(by: >)
         }
-          
-          
-         let sortedButtonArray = arrayss.sorted(by: >)
-        //Buttonlar gelen değerlerin ve istenilen değerlerin sortlama işlemi
-
-         //Kullanıcının button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
-         print("sortedArray",sortedArray)
-         print("sortedButtonArray", sortedButtonArray)
-         print("arrays",arrayss)
-             if sortedArray == sortedButtonArray {
-                 return true
-             } else {
-                 return false
-             }
         
-         //Kullanıcının button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
+        
+        let sortedButtonArray = arrayss.sorted(by: >)
+        //Buttonlar gelen değerlerin ve istenilen değerlerin sortlama işlemi
+        
+        //Kullanıcının button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
+        print("sortedArray",sortedArray)
+        print("sortedButtonArray", sortedButtonArray)
+        print("arrays",arrayss)
+        if sortedArray == sortedButtonArray {
+            return true
+        } else {
+            return false
+        }
+        
+        //Kullanıcının button lardan append ettiği değer ile istediğimiz değeri karşılaştırıyor
     }
     
     
@@ -450,7 +475,7 @@ class MainViewController: UIViewController {
         }
         
     }
-  // && rollCount != 3 kısmında 4 yerine 3 yazma sebebimiz fonksiyonun rollbutton calıstıktan sonra değeri alıyor olması!
+    // && rollCount != 3 kısmında 4 yerine 3 yazma sebebimiz fonksiyonun rollbutton calıstıktan sonra değeri alıyor olması!
     func button3 () {
         diceRoller()
         
@@ -530,14 +555,14 @@ class MainViewController: UIViewController {
     
     
     //func allocatedSkillLog() {
-        
-        //        print(characterAllocatedStr!)
-        //        print(characterAllocatedDex!)
-        //        print(characterAllocatedCon!)
-        //        print(characterAllocatedWis!)
-        //        print(characterAllocatedInt!)
-        //        print(characterAllocatedCha!)
-        
+    
+    //        print(characterAllocatedStr!)
+    //        print(characterAllocatedDex!)
+    //        print(characterAllocatedCon!)
+    //        print(characterAllocatedWis!)
+    //        print(characterAllocatedInt!)
+    //        print(characterAllocatedCha!)
+    
     //}
     
     // This func makes a dict from char allocated stats
@@ -553,11 +578,11 @@ class MainViewController: UIViewController {
     func diceRoller () -> String {
         let allocatedStatsDiceDic : [String: Int] =
             ["str": characterAllocatedStr!*5+1,
-            "dex": characterAllocatedDex!*5+1,
-            "con": characterAllocatedCon!*5+1,
-            "wis": characterAllocatedWis!*5+1,
-            "int": characterAllocatedInt!*5+1,
-            "cha": characterAllocatedCha!*5+1]
+             "dex": characterAllocatedDex!*5+1,
+             "con": characterAllocatedCon!*5+1,
+             "wis": characterAllocatedWis!*5+1,
+             "int": characterAllocatedInt!*5+1,
+             "cha": characterAllocatedCha!*5+1]
         var pipi = [String: Int]()
         var sum = 0
         
