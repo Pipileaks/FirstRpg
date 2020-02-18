@@ -11,7 +11,7 @@
         <!--Skill Allocate View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SkillAllocateViewController" customModule="FirstRpg" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="SkillAllocateViewController" customModule="FirstRpg" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -368,11 +368,91 @@
                         <outlet property="sButtonOutlet" destination="xdK-dP-td2" id="g6f-CS-vRE"/>
                         <outlet property="storyTextOutlet" destination="RqE-HX-Ptg" id="zWd-lI-Ssj"/>
                         <outlet property="tButtonOutlet" destination="ObT-JF-107" id="Vsk-ux-WqF"/>
+                        <segue destination="eY4-Hf-JoX" kind="presentation" identifier="goToGameOver" id="CiV-vV-gDv"/>
+                        <segue destination="wFd-oH-WOm" kind="presentation" identifier="goToCredits" id="AFb-tW-6uE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xh1-GH-Vpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952.79999999999995" y="-208.24587706146929"/>
+            <point key="canvasLocation" x="879" y="-183"/>
+        </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="U9b-CM-4hZ">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="eY4-Hf-JoX" customClass="GameOverViewController" customModule="FirstRpg" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="46y-Yx-1M7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E07-20-e0A">
+                                <rect key="frame" x="150" y="530" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Restart"/>
+                                <connections>
+                                    <action selector="restartGame:" destination="eY4-Hf-JoX" eventType="touchUpInside" id="Dbp-ZB-bhm"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToRestart" id="ZRR-0P-vSa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6p-N8-w8i">
+                                <rect key="frame" x="48" y="90" width="278" height="203"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Ptk-mZ-pQj"/>
+                    </view>
+                    <connections>
+                        <outlet property="gameOverScreen" destination="b6p-N8-w8i" id="xhf-QO-3Ao"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GiX-h0-8HN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1760.8" y="-203.74812593703149"/>
+        </scene>
+        <!--Credits View Controller-->
+        <scene sceneID="wta-c3-IhQ">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="wFd-oH-WOm" customClass="CreditsViewController" customModule="FirstRpg" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x8s-je-duM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJa-hk-Qbx">
+                                <rect key="frame" x="127" y="486" width="96" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Restart"/>
+                                <connections>
+                                    <action selector="restartAgain:" destination="wFd-oH-WOm" eventType="touchUpInside" id="yse-ZQ-P7O"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToRestartAgain" id="Ict-98-2CC"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sen allahın bir lütfusun gözlerimin nurusun." borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xop-A7-u7C">
+                                <rect key="frame" x="53" y="99" width="306" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HADİ KÖYÜNE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHF-fQ-Dux">
+                                <rect key="frame" x="103" y="217" width="168" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Zz-9v-T17"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rhg-RX-w8P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1396" y="513.19340329835086"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ict-98-2CC"/>
+    </inferredMetricsTieBreakers>
 </document>

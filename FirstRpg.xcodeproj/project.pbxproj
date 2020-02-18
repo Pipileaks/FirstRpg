@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1116B5A523E87B8E00E0244D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116B5A423E87B8E00E0244D /* MainViewController.swift */; };
+		113F43C823FC2AD9000B8A90 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F43C723FC2AD9000B8A90 /* GameOverViewController.swift */; };
+		113F43CA23FC2BD1000B8A90 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F43C923FC2BD1000B8A90 /* CreditsViewController.swift */; };
 		115D8E3F23E37E080099D0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E3E23E37E080099D0F1 /* AppDelegate.swift */; };
 		115D8E4123E37E080099D0F1 /* SkillAllocateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E4023E37E080099D0F1 /* SkillAllocateViewController.swift */; };
 		115D8E4423E37E080099D0F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115D8E4223E37E080099D0F1 /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		1116B5A423E87B8E00E0244D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		113F43C723FC2AD9000B8A90 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		113F43C923FC2BD1000B8A90 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		115D8E3B23E37E080099D0F1 /* FirstRpg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstRpg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		115D8E3E23E37E080099D0F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		115D8E4023E37E080099D0F1 /* SkillAllocateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillAllocateViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 			children = (
 				115D8E4023E37E080099D0F1 /* SkillAllocateViewController.swift */,
 				1116B5A423E87B8E00E0244D /* MainViewController.swift */,
+				113F43C723FC2AD9000B8A90 /* GameOverViewController.swift */,
+				113F43C923FC2BD1000B8A90 /* CreditsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,9 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113F43C823FC2AD9000B8A90 /* GameOverViewController.swift in Sources */,
 				1116B5A523E87B8E00E0244D /* MainViewController.swift in Sources */,
 				115D8E4123E37E080099D0F1 /* SkillAllocateViewController.swift in Sources */,
 				115D8E3F23E37E080099D0F1 /* AppDelegate.swift in Sources */,
+				113F43CA23FC2BD1000B8A90 /* CreditsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

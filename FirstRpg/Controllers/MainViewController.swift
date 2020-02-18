@@ -219,6 +219,21 @@ class MainViewController: UIViewController {
         }
     }
     
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+               
+               if segue.identifier == "goToGameOver" {
+                   let destinationVC = segue.destination as! GameOverViewController
+                  
+                  destinationVC.mentalCurrent = mentalTotal
+                  destinationVC.pyhsicalCurrent = pyhsicalTotal
+                  print("FM:", mentalTotal)
+                  print("FP:", pyhsicalTotal)
+                   
+               }
+           }
+    
+ 
     
     
     @IBAction func nextButton(_ sender: UIButton) {
@@ -233,14 +248,20 @@ class MainViewController: UIViewController {
             mentalDamageCounter.text = String(mentalTotal)
         }
         storyCounter += 1
-        //TODO: @Atakan işe yaramıyorsa yukarıdan da buradan da kaldır        leftCounter += 1
-        //TODO: @Atakan işe yaramıyorsa yukarıdan da buradan da kaldır        rightCounter += 1
-        print(pyhsicalTotal)
-        print(mentalTotal)
-        print(controlResult())
-        leftSideOutlet.text = storySelectionLeftBankDic[storyCounter]
-        rightSideOutlet.text = storySelectionRightBankDic[storyCounter]
-        storyTextOutlet.text = storyBankDic[storyCounter]
+
+       //Storylerin sayısı arttıkça operatörün sayısını değiştir.
+        if storyCounter != 6 {
+            leftSideOutlet.text = storySelectionLeftBankDic[storyCounter]
+            rightSideOutlet.text = storySelectionRightBankDic[storyCounter]
+            storyTextOutlet.text = storyBankDic[storyCounter]
+        }
+        
+        //Credits ekranına gider - story sayısından büyük olması lazım.
+        if storyCounter > 5 {
+                               performSegue(withIdentifier: "goToCredits", sender: self)
+                           }
+      
+        
         rollButtonOutlet.isUserInteractionEnabled = true
         rollButtonOutlet.isHidden = true
         rollButtonOutlet.setTitle("Roll", for: .normal)
@@ -268,6 +289,13 @@ class MainViewController: UIViewController {
         rightSideOutlet.backgroundColor = .orange
         rightSideOutlet.isHidden = false
         leftSideOutlet.isHidden = false
+        
+        //Gameover screen'e gitmesini sağlıyor.
+        if mentalTotal == 0 || pyhsicalTotal == 0 {
+            performSegue(withIdentifier: "goToGameOver", sender: self)
+        }
+        
+   
         
         
         
