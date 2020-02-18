@@ -76,7 +76,7 @@ class MainViewController: UIViewController {
 
     // İstediğimiz değerlerin yazıldığı arrayler bloğu
     // @Umut isimler mental ve fiziksel dictionary olarak değişse nasıl olur?
-    var storyInt = [["str", "str", "dex", "dex", "wis", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"]]
+    var storyInt = [["str", "str", "str", "str", "str", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"],["con", "int", "int", "int", "cha", "z"]]
      var storyInt2 = [["con", "int", "int", "int", "cha", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"],["str", "str", "dex", "dex", "wis", "z"]]
     // İstediğimiz değerlerin yazıldığı arrayler bloğu
     
@@ -287,7 +287,7 @@ class MainViewController: UIViewController {
         
         //Kaç defa basıldı
         rollCount += 1
-        sender.setTitle(String(3 - rollCount), for: .normal)
+        sender.setTitle(String(3 - rollCount) +  " Hakkın Kaldı", for: .normal)
         if rollCount == 3 {
             sender.setTitle("checkout", for: .normal)
         }
@@ -405,7 +405,7 @@ class MainViewController: UIViewController {
     
     
     // Kullanıcının Attığı Zar Buttonlarının Fonksiyonlar Bloğu
-    
+    // && rollCount != 3 kısmında 4 yerine 3 yazma sebebimiz fonksiyonun rollbutton calıstıktan sonra değeri alıyor olması!
     func button1 () {
         diceRoller()
         
@@ -428,7 +428,7 @@ class MainViewController: UIViewController {
         print(rollCount)
     }
     
-    
+    // && rollCount != 3 kısmında 4 yerine 3 yazma sebebimiz fonksiyonun rollbutton calıstıktan sonra değeri alıyor olması!
     func button2 () {
         diceRoller()
         
@@ -450,7 +450,7 @@ class MainViewController: UIViewController {
         }
         
     }
-    
+  // && rollCount != 3 kısmında 4 yerine 3 yazma sebebimiz fonksiyonun rollbutton calıstıktan sonra değeri alıyor olması!
     func button3 () {
         diceRoller()
         
@@ -472,7 +472,7 @@ class MainViewController: UIViewController {
         }
         
     }
-    
+    // && rollCount != 3 kısmında 4 yerine 3 yazma sebebimiz fonksiyonun rollbutton calıstıktan sonra değeri alıyor olması!
     func button4 () {
         diceRoller()
         
@@ -494,7 +494,7 @@ class MainViewController: UIViewController {
         }
         
     }
-    
+    // && rollCount != 3 kısmında 4 yerine 3 yazma sebebimiz fonksiyonun rollbutton calıstıktan sonra değeri alıyor olması!
     func button5 () {
         diceRoller()
         
