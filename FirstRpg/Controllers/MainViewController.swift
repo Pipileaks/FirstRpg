@@ -245,6 +245,8 @@ class MainViewController: UIViewController {
         rollButtonOutlet.isHidden = true
         rollButtonOutlet.setTitle("Roll", for: .normal)
         rollCount = 0
+        leftButtonOutlet.isUserInteractionEnabled = true
+        rightButtonOutlet.isUserInteractionEnabled = true
         fButtonOutlet.isSelected = false
         sButtonOutlet.isSelected = false
         tButtonOutlet.isSelected = false
@@ -266,6 +268,7 @@ class MainViewController: UIViewController {
         rightSideOutlet.backgroundColor = .orange
         rightSideOutlet.isHidden = false
         leftSideOutlet.isHidden = false
+        
         
         
     }

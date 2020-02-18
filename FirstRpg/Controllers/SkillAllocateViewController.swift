@@ -16,7 +16,7 @@ class SkillAllocateViewController: UIViewController {
     var dex_max_cal = 0, str_max_cal = 0, int_max_cal = 0, wis_max_cal = 0, cha_max_cal = 0, lck_max_cal = 0
     
     
-    let absoluteTotalPoints = 1  // total stat pool
+    let absoluteTotalPoints = 20  // total stat pool
     
     
     
